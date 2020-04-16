@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+# ========================================================================================
+# Aliases
+# ========================================================================================
+
+# airport cli
+alias airport="/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport"
+
+# ========================================================================================
+# Helpers
+# ========================================================================================
+
+# lookup dns records
+alias dnsrecords="host -a"
+
+# flush dns cache
+alias flushdns="dscacheutil -flushcache && killall -HUP mDNSResponder"
+
+# edit hostfile
+alias hosts="edit /etc/hosts"
+
+# get IP address
+alias ip="wget https://ipinfo.io/ip -qO -"
+
+# get local IP address
+alias localip="ipconfig getifaddr en0"

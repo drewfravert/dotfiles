@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+# ========================================================================================
+# Dotfiles
+# ========================================================================================
+
+# load private environment
+if [[ -r ~/.localrc ]]; then
+  source ~/.localrc
+fi
+
+# load dotfile configurations
+for file in (~/.dotfiles/**/config); do
+	if [[ -r $file ]]; then
+    source $file
+  fi
+done
+unset file

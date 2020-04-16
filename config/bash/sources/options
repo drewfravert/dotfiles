@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+# ========================================================================================
+# Options
+# ========================================================================================
+
+# extend glob pattern matching
+shopt -s extglob
+
+# case-insensitive glob pathname expansion
+shopt -s nocaseglob
+
+# autocorrect path name typos when using `cd`
+shopt -s cdspell

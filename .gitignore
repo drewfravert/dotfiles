@@ -1,0 +1,2 @@
+# ignore private environment config
+config/env/

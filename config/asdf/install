@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+
+# ========================================================================================
+# asdf
+# ========================================================================================
+
+echo "Installing asdf languages..."
+echo "Installing language plugins..."
+
+# language plugins
+asdf plugin add elixir
+asdf plugin add erlang
+asdf plugin add golang
+asdf plugin add python
+asdf plugin add ruby
+
+echo "Installing language binaries..."
+
+# language binaries
+asdf install elixir latest # https://elixir-lang.org/
+asdf install erlang latest # https://www.erlang.org/
+asdf install golang latest # https://golang.org/
+asdf install python latest # https://www.python.org/
+asdf install ruby latest   # https://www.ruby-lang.org/en/
+
+echo "Setting global versions..."
+
+# language binaries
+asdf global elixir $(asdf latest elixir)
+asdf global erlang $(asdf latest erlang)
+asdf global golang $(asdf latest golang)
+asdf global python $(asdf latest python)
+asdf global ruby $(asdf latest ruby)
+
+echo "Done."

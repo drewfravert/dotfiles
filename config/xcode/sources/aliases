@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+# ========================================================================================
+# Helpers
+# ========================================================================================
+
+# iOS simulator
+alias simulate="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app"

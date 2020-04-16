@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# ========================================================================================
+# Helpers
+# ========================================================================================
+
+# update macos
+alias macupdate="sudo softwareupdate --list --download --install --all"
+
+# add blank space to OS dock
+alias addspacer="defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type="spacer-tile";}'; killall Dock"

@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+# create a new directory then enter it
+mkdir -p "$@" && cd "$@"

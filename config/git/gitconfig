@@ -1,0 +1,41 @@
+[alias]
+
+  g = "git"
+  ga = "git add --all"
+  gc = "git commit -v -m"
+  gco = "git checkout"
+  gcob = "git checkout -b"
+  gcl = "git clone --recursive"
+  gd = "git diff"
+  gl = "git log --graph --pretty --abbrev-commit"
+  gpl = "git pull --recurse-submodules"
+  gpu = "git push"
+  gr = "git remote -v"
+  gs = "git status"
+  gt = "git tag -l"
+
+  aliases = config --get-regexp alias
+  amend = commit --amend --reuse-message=HEAD
+  contributors = "shortlog --summary --numbered"
+
+[color]
+
+  ui = true
+
+[code]
+
+	attributesfile = ~/.gitattributes
+  excludesfile = ~/.gitignore
+  includesfile = ~/.gitconfig.local
+
+[commit]
+
+  gpgsign = true
+
+[credential]
+
+  helper = osxkeychain
+
+[help]
+
+	autocorrect = 1

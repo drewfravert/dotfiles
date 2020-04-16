@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+# ========================================================================================
+# Git Install
+# ========================================================================================
+
+# create the local config
+touch ~/.gitconfig.local
+
+# append the given input to the local config
+cat >> ~/.gitconfig.local <<EOF
+[user]
+
+  name = $GIT_NAME
+  email = $GIT_EMAIL
+  signingkey = $GIT_SIGNING_KEY
+
+EOF

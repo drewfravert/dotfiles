@@ -1,0 +1,187 @@
+#!/usr/bin/env bash
+
+# ========================================================================================
+# macOS Config
+# ========================================================================================
+
+echo "Configuring macOS preferences..."
+
+pkill -x "System Preferences"
+
+# Only setup some basic configuration and hard-to-reach settings. Found it was better to
+# leave well enough alone and do most config through the GUI.
+
+# ========================================================================================
+# System
+# ========================================================================================
+
+echo "Setting System preferences..."
+
+# request desired computer and host names
+read -p "Computer Name: " _computername
+read -p "LocalHost Name: " _localhostname
+
+# set desired computer and host names
+sudo scutil --set ComputerName $_computername
+sudo scutil --set LocalHostName $_localhostname
+
+# ========================================================================================
+# General
+# ========================================================================================
+
+echo "Setting General preferences..."
+
+# enable dark mode theme
+defaults write -g AppleInterfaceStyle -string "Dark"
+
+# set accent to blue
+defaults write -g AppleAquaColorVariant -int 1
+
+# set highlight color to blue
+defaults delete -g AppleHighlightColor
+
+# set sidebar icon size to small
+defaults write -g NSTableViewDefaultSizeMode -int 1
+
+# always show menu bar
+defaults write -g _HIHideMenuBar -bool false
+
+# set scrollbar behavior to jump to spot that's clicked
+defaults write -g AppleShowScrollBars -string "WhenScrolling"
+
+# set scrollbar behavior to jump to spot that's clicked
+defaults write -g AppleScrollerPagingBehavior -int 1
+
+# ========================================================================================
+# Dock
+# ========================================================================================
+
+echo "Setting Dock preferences..."
+
+# set dock tile size to 24
+defaults write com.apple.dock tilesize -int 24
+
+# disable dock magnification
+defaults write com.apple.dock magnification -bool false
+
+# orient the dock to the bottom of the screen
+defaults write com.apple.dock orientation -string "bottom"
+
+# scale windows when minimizing
+defaults write com.apple.dock mineffect -string "scale"
+
+# set documents to open in tabs only when in fullscreen
+defaults write -g AppleWindowTabbingMode -string "fullscreen"
+
+# maximize windows when double clicking on them
+defaults write -g AppleActionOnDoubleClick -string "Maximize"
+
+# disable minimizing into application
+defaults write com.apple.dock minimize-to-application -bool false
+
+# animate applications when opening
+defaults write com.apple.dock launchanim -bool true
+
+# automatically hide dock
+defaults write com.apple.dock autohide -bool true
+
+# show indicator lights for open applications
+defaults write com.apple.dock show-process-indicators -bool true
+
+# disable recent applications in the dock
+defaults write com.apple.dock show-recents -bool false
+
+# ========================================================================================
+# Network
+# ========================================================================================
+
+echo "Setting Network preferences..."
+
+# enable airdrop over ethernet and on unsupported macs
+defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true
+
+# ========================================================================================
+# Security & Privacy
+# ========================================================================================
+
+echo "Setting Security & Privacy preferences..."
+
+# Require password immediately after sleep or screen saver begins
+defaults write com.apple.screensaver askForPassword -int 1
+defaults write com.apple.screensaver askForPasswordDelay -int 0
+
+# ========================================================================================
+# Finder
+# ========================================================================================
+
+echo "Setting Finder preferences..."
+
+# show the ~/Library folder
+chflags nohidden ~/Library
+
+# show icons for hard drives and servers on the desktop
+defaults write com.apple.finder ShowHardDrivesOnDesktop -bool true
+defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
+defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
+defaults write com.apple.finder ShowMountedServersOnDesktop -bool true
+
+# set convenience variables for icon config
+plistbuddy="/usr/libexec/PlistBuddy -c"
+finderplist="~/Library/Preferences/com.apple.finder.plist"
+
+# show icon info
+plistbuddy "Set :DesktopViewSettings:IconViewSettings:showItemInfo true" finderplist
+plistbuddy "Set :FK_StandardViewSettings:IconViewSettings:showItemInfo true" finderplist
+plistbuddy "Set :StandardViewSettings:IconViewSettings:showItemInfo true" finderplist
+
+# position icon info to the right of the icons
+plistbuddy "Set DesktopViewSettings:IconViewSettings:labelOnBottom false" finderplist
+plistbuddy "Set FK_StandardViewSettings:IconViewSettings:labelOnBottom false" finderplist
+plistbuddy "Set StandardViewSettings:IconViewSettings:labelOnBottom false" finderplist
+
+# enable snap-to-grid for icons
+plistbuddy "Set :DesktopViewSettings:IconViewSettings:arrangeBy grid" finderplist
+plistbuddy "Set :FK_StandardViewSettings:IconViewSettings:arrangeBy grid" finderplist
+plistbuddy "Set :StandardViewSettings:IconViewSettings:arrangeBy grid" finderplist
+
+# set icon grid spacing
+plistbuddy "Set :DesktopViewSettings:IconViewSettings:gridSpacing 96" finderplist
+plistbuddy "Set :FK_StandardViewSettings:IconViewSettings:gridSpacing 60" finderplist
+plistbuddy "Set :StandardViewSettings:IconViewSettings:gridSpacing 60" finderplist
+
+# set icon size
+plistbuddy "Set :DesktopViewSettings:IconViewSettings:iconSize 36" finderplist
+plistbuddy "Set :FK_StandardViewSettings:IconViewSettings:iconSize 36" finderplist
+plistbuddy "Set :StandardViewSettings:IconViewSettings:iconSize 36" finderplist
+
+# unset convenience variables
+unset plistbuddy
+unset finderplist
+
+# open windows in column view
+defaults write com.apple.finder FXPreferredViewStyle -string "clmv"
+
+# show path bar
+defaults write com.apple.finder ShowPathbar -bool true
+
+# ========================================================================================
+# Restart
+# ========================================================================================
+
+echo "Restarting affected applications..."
+
+killall Dock
+killall Finder
+killall SystemUIServer
+
+# ========================================================================================
+# App Store
+# ========================================================================================
+
+echo "Installing App Store software..."
+
+mas install 497799835 # Xcode
+mas install 420212497 # Byword
+mas install 405772121 # LittleIpsum
+
+echo "Done."

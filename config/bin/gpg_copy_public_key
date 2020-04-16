@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+# pipe GPG public key to clipboard
+gpg --export --armor $EMAIL | pbcopy | echo "GPG public key copied to clipboard."

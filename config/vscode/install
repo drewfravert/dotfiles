@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+# ========================================================================================
+# VS Code
+# ========================================================================================
+
+# configure settings
+# keybindings.json
+# settings.json
+
+# install extensions
+code --install-extension mrmlnc.vscode-apache
+code --install-extension elixir-lsp.elixir-ls
+code --install-extension craigmaslowski.erb
+code --install-extension dbaeumer.vscode-eslint
+code --install-extension eamodio.gitlens
+code --install-extension zhuangtongfa.material-theme
+code --install-extension mhmadhamster.postcss-language
+code --install-extension ms-vscode-remote.vscode-remote-extensionpack
+code --install-extension rebornix.ruby
+code --install-extension castwide.solargraph
+code --install-extension octref.vetur
+code --install-extension wingrunr21.vscode-ruby

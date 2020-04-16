@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+# ========================================================================================
+# Functions
+# ========================================================================================
+
+git_prompt_info() {
+  ref=$(git symbolic-ref HEAD 2>/dev/null) || return
+  echo "${ref#refs/heads/}"
+}
+
+git_status() {
+  if git branch &> /dev/null; then
+    if git status | grep "nothing to commit" &> /dev/null; then
+      echo -en $GREEN$(__git_ps1 " [%s]")$RESET
+    else
+      echo -en $RED$(__git_ps1 " [%s]")$RESET
+    fi
+  fi
+}

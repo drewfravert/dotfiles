@@ -1,0 +1,29 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+- clean: ["~"]
+- link:
+    ~/.dotfiles: config
+    ~/.bash_profile: config/bash/bash_profile
+    ~/.bashrc: config/bash/bashrc
+    ~/.gitattributes: config/git/gitattributes
+    ~/.gitconfig: config/git/gitconfig
+    ~/.gitignore: config/git/gitignore
+    ~/.vimrc: config/vim/vimrc
+- create:
+  - ~/dev
+  - ~/notes
+  - ~/torrents
+  - ~/sync
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
+  - [bash ./config/homebrew/install, Installing Homebrew, taps, formulae and casks]
+  - [bash ./config/macos/install, Configuring macOS]
+  - [bash ./config/asdf/install, Installing asdf languages]
+  - [bash ./config/yarn/install, Installing Yarn packages]
+  - [bash ./config/openssh/install, Configuring SSH keys]
+  - [bash ./config/gnupg/install, Configuring GPG keys]
+  - [bash ./config/env/install, Configuring local environment]
+  - [bash ./config/git/install, Configuring Git user information]
+  - [bash ./config/vscode/install, Configuring Visual Studio Code]

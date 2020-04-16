@@ -1,0 +1,147 @@
+#!/usr/bin/env bash
+
+# ========================================================================================
+# Homebrew Install
+# ========================================================================================
+
+echo "Installing Homebrew..."
+/usr/bin/env bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)" # https://brew.sh/
+
+# ========================================================================================
+# Options
+# ========================================================================================
+
+echo "Disabling analytics..."
+brew analytics off # https://docs.brew.sh/Analytics
+
+# ========================================================================================
+# Taps
+# ========================================================================================
+
+echo "Installing taps..."
+brew tap homebrew/cask-versions # https://github.com/Homebrew/homebrew-cask-versions
+brew tap homebrew/cask-drivers  # https://github.com/Homebrew/homebrew-cask-drivers
+brew tap homebrew/cask-fonts    # https://github.com/Homebrew/homebrew-cask-fonts
+brew services                   # https://github.com/Homebrew/homebrew-services
+
+# ========================================================================================
+# Formulae
+# ========================================================================================
+
+echo "Installing formulae..."
+brew install asdf              # https://asdf-vm.com/
+brew install awscli            # https://aws.amazon.com/cli/
+brew install bash              # https://www.gnu.org/software/bash/
+brew install bash-completion@2 # https://github.com/scop/bash-completion
+brew install coreutils         # https://www.gnu.org/software/coreutils/
+brew install docker            # https://www.docker.com/
+brew install exa               # https://the.exa.website/
+brew install findutils         # https://www.gnu.org/software/findutils/
+brew install fzf               # https://github.com/junegunn/fzf
+brew install gh                # https://github.com/cli/cli
+brew install git               # https://git-scm.com/
+brew install gnupg             # https://gnupg.org/
+brew install grep              # https://www.gnu.org/software/grep/
+brew install httpie            # https://httpie.org/
+brew install imagemagick       # https://imagemagick.org/
+brew install mas               # https://github.com/mas-cli/mas
+brew install node              # https://nodejs.org/
+brew install openssh           # https://www.openssh.com/
+brew install postgresql        # https://www.postgresql.org/
+brew install ripgrep           # https://github.com/BurntSushi/ripgrep
+brew install thefuck           # https://github.com/nvbn/thefuck
+brew install vim               # https://www.vim.org/
+brew install wget              # https://www.gnu.org/software/wget/
+brew install yarn              # https://yarnpkg.com/
+
+# ========================================================================================
+# Casks
+# ========================================================================================
+
+echo "Installing applications..."
+brew cask install 1password            # https://1password.com/
+brew cask install 1password-cli        # https://support.1password.com/command-line/
+brew cask install adobe-acrobat-reader # https://acrobat.adobe.com/us/en/acrobat/pdf-reader.html
+brew cask install brave-browser        # https://brave.com/
+brew cask install cleanmymac           # https://macpaw.com/cleanmymac
+brew cask install coda                 # https://panic.com/coda/
+brew cask install codekit              # https://codekitapp.com/
+brew cask install docker               # https://www.docker.com/products/docker-desktop
+brew cask install firefox              # https://www.mozilla.org/en-US/firefox/
+brew cask install gpg-suite            # https://gpgtools.org/
+brew cask install github               # https://desktop.github.com/
+brew cask install graphiql             # https://github.com/skevy/graphiql-app
+brew cask install hyper                # https://hyper.is/
+brew cask install iterm2               # https://www.iterm2.com/
+brew cask install imageoptim           # https://imageoptim.com/mac
+brew cask install ivpn                 # https://www.ivpn.net/apps-macos
+brew cask install keybase              # https://keybase.io/
+brew cask install ledger-live          # https://www.ledger.com/ledger-live/
+brew cask install little-snitch        # https://www.obdev.at/products/littlesnitch/index.html
+brew cask install mamp                 # https://www.mamp.info/en/mac/
+brew cask install pgadmin4             # https://www.pgadmin.org/
+brew cask install postgres             # https://postgresapp.com/
+brew cask install postman              # https://www.postman.com/
+brew cask install resilio-sync         # https://www.resilio.com/
+brew cask install slack                # https://slack.com/
+brew cask install spotify              # https://www.spotify.com/us/
+brew cask install the-unarchiver       # https://theunarchiver.com/
+brew cask install tor-browser          # https://www.torproject.org/
+brew cask install transmission         # https://transmissionbt.com/
+brew cask install visual-studio-code   # https://code.visualstudio.com/
+brew cask install vlc                  # https://www.videolan.org/vlc/
+
+# ========================================================================================
+# Versions
+# ========================================================================================
+
+echo "Installing development browsers..."
+brew cask install firefox-developer-edition # https://www.mozilla.org/en-US/firefox/developer/
+brew cask install google-chrome-dev         # https://www.google.com/chrome/dev/
+
+# ========================================================================================
+# Drivers
+# ========================================================================================
+
+echo "Installing drivers..."
+brew cask install ubiquiti-unifi-controller # https://unifi-network.ui.com/
+brew cask install wacom-tablet              # https://www.wacom.com/en-us/support/product-support/drivers
+
+# ========================================================================================
+# Fonts
+# ========================================================================================
+
+echo "Installing serif fonts..."
+brew cask install font-roboto-slab      # https://fonts.google.com/specimen/Roboto+Slab
+brew cask install font-source-serif-pro # https://fonts.google.com/specimen/Source+Serif+Pro
+
+echo "Installing sans serif fonts..."
+brew cask install font-hind                # https://fonts.google.com/specimen/Hind
+brew cask install font-inter               # https://fonts.google.com/specimen/Inter
+brew cask install font-lato                # https://fonts.google.com/specimen/Lato
+brew cask install font-open-sans           # https://fonts.google.com/specimen/Open+Sans
+brew cask install font-open-sans-condensed # https://fonts.google.com/specimen/Open+Sans+Condensed
+brew cask install font-roboto              # https://fonts.google.com/specimen/Roboto
+brew cask install font-roboto-condensed    # https://fonts.google.com/specimen/Roboto+Condensed
+brew cask install font-source-sans-pro     # https://fonts.google.com/specimen/Source+Sans+Pro
+
+echo "Installing monospace fonts..."
+brew cask install font-cascadia-mono  # https://github.com/microsoft/cascadia-code
+brew cask install font-hack           # https://github.com/source-foundry/Hack
+brew cask install font-inconsolata    # https://fonts.google.com/specimen/Inconsolata
+brew cask install font-input          # https://input.fontbureau.com/
+brew cask install font-fira-code      # https://github.com/tonsky/FiraCode
+brew cask install font-jetbrains-mono # https://github.com/JetBrains/JetBrainsMono
+brew cask install font-roboto-mono    # https://fonts.google.com/specimen/Roboto+Mono
+
+# ========================================================================================
+# Cleanup
+# ========================================================================================
+
+echo "Cleaning up after ourselves..."
+brew cleanup
+
+echo "Verifying that everything is okay..."
+brew doctor
+
+echo "Done."

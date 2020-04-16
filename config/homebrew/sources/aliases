@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# ========================================================================================
+# Helpers
+# ========================================================================================
+
+# update homebrew and formulae
+# upgrade outdated formulae
+# remove stale/outdated/old formulae
+alias brewupdate="brew update; brew upgrade; brew cleanup"

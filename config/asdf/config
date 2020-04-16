@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+source ~/.dotfiles/asdf/sources/paths
+source ~/.dotfiles/asdf/sources/aliases

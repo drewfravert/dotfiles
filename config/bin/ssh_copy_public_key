@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+# pipe SSH public key to clipboard
+more ~/.ssh/id_rsa.pub | pbcopy | echo "SSH public key copied to clipboard."
