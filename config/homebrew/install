@@ -68,12 +68,12 @@ brew cask install coda                 # https://panic.com/coda/
 brew cask install codekit              # https://codekitapp.com/
 brew cask install docker               # https://www.docker.com/products/docker-desktop
 brew cask install firefox              # https://www.mozilla.org/en-US/firefox/
-brew cask install gpg-suite            # https://gpgtools.org/
 brew cask install github               # https://desktop.github.com/
+brew cask install gpg-suite            # https://gpgtools.org/
 brew cask install graphiql             # https://github.com/skevy/graphiql-app
 brew cask install hyper                # https://hyper.is/
-brew cask install iterm2               # https://www.iterm2.com/
 brew cask install imageoptim           # https://imageoptim.com/mac
+brew cask install iterm2               # https://www.iterm2.com/
 brew cask install ivpn                 # https://www.ivpn.net/apps-macos
 brew cask install keybase              # https://keybase.io/
 brew cask install ledger-live          # https://www.ledger.com/ledger-live/

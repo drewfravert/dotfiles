@@ -10,7 +10,7 @@ if [[ -r ~/.localrc ]]; then
 fi
 
 # load dotfile configurations
-for file in (~/.dotfiles/**/config); do
+for file in ~/.dotfiles/**/config; do
 	if [[ -r $file ]]; then
     source $file
   fi
