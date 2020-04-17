@@ -131,34 +131,34 @@ defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
 defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
 defaults write com.apple.finder ShowMountedServersOnDesktop -bool true
 
-# set convenience variables for icon config
+# set convenience variables for icon config readability
 plistbuddy="/usr/libexec/PlistBuddy -c"
 finderplist="~/Library/Preferences/com.apple.finder.plist"
 
 # show icon info
-plistbuddy "Set :DesktopViewSettings:IconViewSettings:showItemInfo true" finderplist
-plistbuddy "Set :FK_StandardViewSettings:IconViewSettings:showItemInfo true" finderplist
-plistbuddy "Set :StandardViewSettings:IconViewSettings:showItemInfo true" finderplist
+$plistbuddy "Set :DesktopViewSettings:IconViewSettings:showItemInfo true" $finderplist
+$plistbuddy "Set :FK_StandardViewSettings:IconViewSettings:showItemInfo true" $finderplist
+$plistbuddy "Set :StandardViewSettings:IconViewSettings:showItemInfo true" $finderplist
 
 # position icon info to the right of the icons
-plistbuddy "Set DesktopViewSettings:IconViewSettings:labelOnBottom false" finderplist
-plistbuddy "Set FK_StandardViewSettings:IconViewSettings:labelOnBottom false" finderplist
-plistbuddy "Set StandardViewSettings:IconViewSettings:labelOnBottom false" finderplist
+$plistbuddy "Set DesktopViewSettings:IconViewSettings:labelOnBottom false" $finderplist
+$plistbuddy "Set FK_StandardViewSettings:IconViewSettings:labelOnBottom false" $finderplist
+$plistbuddy "Set StandardViewSettings:IconViewSettings:labelOnBottom false" $finderplist
 
 # enable snap-to-grid for icons
-plistbuddy "Set :DesktopViewSettings:IconViewSettings:arrangeBy grid" finderplist
-plistbuddy "Set :FK_StandardViewSettings:IconViewSettings:arrangeBy grid" finderplist
-plistbuddy "Set :StandardViewSettings:IconViewSettings:arrangeBy grid" finderplist
+$plistbuddy "Set :DesktopViewSettings:IconViewSettings:arrangeBy grid" $finderplist
+$plistbuddy "Set :FK_StandardViewSettings:IconViewSettings:arrangeBy grid" $finderplist
+$plistbuddy "Set :StandardViewSettings:IconViewSettings:arrangeBy grid" $finderplist
 
 # set icon grid spacing
-plistbuddy "Set :DesktopViewSettings:IconViewSettings:gridSpacing 96" finderplist
-plistbuddy "Set :FK_StandardViewSettings:IconViewSettings:gridSpacing 60" finderplist
-plistbuddy "Set :StandardViewSettings:IconViewSettings:gridSpacing 60" finderplist
+$plistbuddy "Set :DesktopViewSettings:IconViewSettings:gridSpacing 96" $finderplist
+$plistbuddy "Set :FK_StandardViewSettings:IconViewSettings:gridSpacing 60" $finderplist
+$plistbuddy "Set :StandardViewSettings:IconViewSettings:gridSpacing 60" $finderplist
 
 # set icon size
-plistbuddy "Set :DesktopViewSettings:IconViewSettings:iconSize 36" finderplist
-plistbuddy "Set :FK_StandardViewSettings:IconViewSettings:iconSize 36" finderplist
-plistbuddy "Set :StandardViewSettings:IconViewSettings:iconSize 36" finderplist
+$plistbuddy "Set :DesktopViewSettings:IconViewSettings:iconSize 36" $finderplist
+$plistbuddy "Set :FK_StandardViewSettings:IconViewSettings:iconSize 36" $finderplist
+$plistbuddy "Set :StandardViewSettings:IconViewSettings:iconSize 36" $finderplist
 
 # unset convenience variables
 unset plistbuddy

@@ -5,7 +5,7 @@
 # ========================================================================================
 
 # update macos
-alias macupdate="sudo softwareupdate --list --download --install --all"
+alias macupdate="sudo softwareupdate --install --all"
 
 # add blank space to OS dock
 alias addspacer="defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type="spacer-tile";}'; killall Dock"

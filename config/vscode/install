@@ -21,3 +21,4 @@ code --install-extension rebornix.ruby
 code --install-extension castwide.solargraph
 code --install-extension octref.vetur
 code --install-extension wingrunr21.vscode-ruby
+code --install-extension sdras.vue-vscode-snippets

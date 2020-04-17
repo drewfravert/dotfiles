@@ -5,134 +5,137 @@
 # ========================================================================================
 
 echo "Installing Homebrew..."
-/usr/bin/env bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)" # https://brew.sh/
+[[ $(which brew) ]] || /usr/bin/env bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
 # ========================================================================================
 # Options
 # ========================================================================================
 
 echo "Disabling analytics..."
-brew analytics off # https://docs.brew.sh/Analytics
+brew analytics off
 
 # ========================================================================================
 # Taps
 # ========================================================================================
 
 echo "Installing taps..."
-brew tap homebrew/cask-versions # https://github.com/Homebrew/homebrew-cask-versions
-brew tap homebrew/cask-drivers  # https://github.com/Homebrew/homebrew-cask-drivers
-brew tap homebrew/cask-fonts    # https://github.com/Homebrew/homebrew-cask-fonts
-brew services                   # https://github.com/Homebrew/homebrew-services
+brew tap homebrew/cask-versions
+brew tap homebrew/cask-drivers
+brew tap homebrew/cask-fonts
+brew services
 
 # ========================================================================================
 # Formulae
 # ========================================================================================
 
 echo "Installing formulae..."
-brew install asdf              # https://asdf-vm.com/
-brew install awscli            # https://aws.amazon.com/cli/
-brew install bash              # https://www.gnu.org/software/bash/
-brew install bash-completion@2 # https://github.com/scop/bash-completion
-brew install coreutils         # https://www.gnu.org/software/coreutils/
-brew install docker            # https://www.docker.com/
-brew install exa               # https://the.exa.website/
-brew install findutils         # https://www.gnu.org/software/findutils/
-brew install fzf               # https://github.com/junegunn/fzf
-brew install gh                # https://github.com/cli/cli
-brew install git               # https://git-scm.com/
-brew install gnupg             # https://gnupg.org/
-brew install grep              # https://www.gnu.org/software/grep/
-brew install httpie            # https://httpie.org/
-brew install imagemagick       # https://imagemagick.org/
-brew install mas               # https://github.com/mas-cli/mas
-brew install node              # https://nodejs.org/
-brew install openssh           # https://www.openssh.com/
-brew install postgresql        # https://www.postgresql.org/
-brew install ripgrep           # https://github.com/BurntSushi/ripgrep
-brew install thefuck           # https://github.com/nvbn/thefuck
-brew install vim               # https://www.vim.org/
-brew install wget              # https://www.gnu.org/software/wget/
-brew install yarn              # https://yarnpkg.com/
+[[ $(brew list --versions asdf) ]]                           || brew install asdf
+[[ $(brew list --versions awscli) ]]                         || brew install awscli
+[[ $(brew list --versions bash) ]]                           || brew install bash
+[[ $(brew list --versions bash-completion@2) ]]              || brew install bash-completion@2
+[[ $(brew list --versions coreutils) ]]                      || brew install coreutils
+[[ $(brew list --versions docker) ]]                         || brew install docker
+[[ $(brew list --versions exa) ]]                            || brew install exa
+[[ $(brew list --versions findutils) ]]                      || brew install findutils
+[[ $(brew list --versions fzf) ]]                            || brew install fzf
+[[ $(brew list --versions gh) ]]                             || brew install gh
+[[ $(brew list --versions git) ]]                            || brew install git
+[[ $(brew list --versions gnupg) ]]                          || brew install gnupg
+[[ $(brew list --versions grep) ]]                           || brew install grep
+[[ $(brew list --versions httpie) ]]                         || brew install httpie
+[[ $(brew list --versions imagemagick) ]]                    || brew install imagemagick
+[[ $(brew list --versions mas) ]]                            || brew install mas
+[[ $(brew list --versions node) ]]                           || brew install node
+[[ $(brew list --versions openssh) ]]                        || brew install openssh
+[[ $(brew list --versions postgresql) ]]                     || brew install postgresql
+[[ $(brew list --versions ripgrep) ]]                        || brew install ripgrep
+[[ $(brew list --versions thefuck) ]]                        || brew install thefuck
+[[ $(brew list --versions vim) ]]                            || brew install vim
+[[ $(brew list --versions wget) ]]                           || brew install wget
+[[ $(brew list --versions yarn) ]]                           || brew install yarn
 
 # ========================================================================================
 # Casks
 # ========================================================================================
 
 echo "Installing applications..."
-brew cask install 1password            # https://1password.com/
-brew cask install 1password-cli        # https://support.1password.com/command-line/
-brew cask install adobe-acrobat-reader # https://acrobat.adobe.com/us/en/acrobat/pdf-reader.html
-brew cask install brave-browser        # https://brave.com/
-brew cask install cleanmymac           # https://macpaw.com/cleanmymac
-brew cask install coda                 # https://panic.com/coda/
-brew cask install codekit              # https://codekitapp.com/
-brew cask install docker               # https://www.docker.com/products/docker-desktop
-brew cask install firefox              # https://www.mozilla.org/en-US/firefox/
-brew cask install github               # https://desktop.github.com/
-brew cask install gpg-suite            # https://gpgtools.org/
-brew cask install graphiql             # https://github.com/skevy/graphiql-app
-brew cask install hyper                # https://hyper.is/
-brew cask install imageoptim           # https://imageoptim.com/mac
-brew cask install iterm2               # https://www.iterm2.com/
-brew cask install ivpn                 # https://www.ivpn.net/apps-macos
-brew cask install keybase              # https://keybase.io/
-brew cask install ledger-live          # https://www.ledger.com/ledger-live/
-brew cask install little-snitch        # https://www.obdev.at/products/littlesnitch/index.html
-brew cask install mamp                 # https://www.mamp.info/en/mac/
-brew cask install pgadmin4             # https://www.pgadmin.org/
-brew cask install postgres             # https://postgresapp.com/
-brew cask install postman              # https://www.postman.com/
-brew cask install resilio-sync         # https://www.resilio.com/
-brew cask install slack                # https://slack.com/
-brew cask install spotify              # https://www.spotify.com/us/
-brew cask install the-unarchiver       # https://theunarchiver.com/
-brew cask install tor-browser          # https://www.torproject.org/
-brew cask install transmission         # https://transmissionbt.com/
-brew cask install visual-studio-code   # https://code.visualstudio.com/
-brew cask install vlc                  # https://www.videolan.org/vlc/
+[[ $(brew cask list --versions 1password) ]]                 || brew cask install 1password
+[[ $(brew cask list --versions 1password-cli) ]]             || brew cask install 1password-cli
+[[ $(brew cask list --versions adobe-acrobat-reader) ]]      || brew cask install adobe-acrobat-reader
+[[ $(brew cask list --versions brave-browser) ]]             || brew cask install brave-browser
+[[ $(brew cask list --versions cleanmymac) ]]                || brew cask install cleanmymac
+[[ $(brew cask list --versions coda) ]]                      || brew cask install coda
+[[ $(brew cask list --versions codekit) ]]                   || brew cask install codekit
+[[ $(brew cask list --versions docker) ]]                    || brew cask install docker
+[[ $(brew cask list --versions firefox) ]]                   || brew cask install firefox
+[[ $(brew cask list --versions github) ]]                    || brew cask install github
+[[ $(brew cask list --versions gpg-suite) ]]                 || brew cask install gpg-suite
+[[ $(brew cask list --versions graphiql) ]]                  || brew cask install graphiql
+[[ $(brew cask list --versions hyper) ]]                     || brew cask install hyper
+[[ $(brew cask list --versions imageoptim) ]]                || brew cask install imageoptim
+[[ $(brew cask list --versions iterm2) ]]                    || brew cask install iterm2
+[[ $(brew cask list --versions ivpn) ]]                      || brew cask install ivpn
+[[ $(brew cask list --versions keybase) ]]                   || brew cask install keybase
+[[ $(brew cask list --versions ledger-live) ]]               || brew cask install ledger-live
+[[ $(brew cask list --versions little-snitch) ]]             || brew cask install little-snitch
+[[ $(brew cask list --versions mamp) ]]                      || brew cask install mamp
+[[ $(brew cask list --versions pgadmin4) ]]                  || brew cask install pgadmin4
+[[ $(brew cask list --versions postgres) ]]                  || brew cask install postgres
+[[ $(brew cask list --versions postman) ]]                   || brew cask install postman
+[[ $(brew cask list --versions resilio-sync) ]]              || brew cask install resilio-sync
+[[ $(brew cask list --versions slack) ]]                     || brew cask install slack
+[[ $(brew cask list --versions spotify) ]]                   || brew cask install spotify
+[[ $(brew cask list --versions the-unarchiver) ]]            || brew cask install the-unarchiver
+[[ $(brew cask list --versions tor-browser) ]]               || brew cask install tor-browser
+[[ $(brew cask list --versions transmission) ]]              || brew cask install transmission
+[[ $(brew cask list --versions visual-studio-code) ]]        || brew cask install visual-studio-code
+[[ $(brew cask list --versions vlc) ]]                       || brew cask install vlc
 
 # ========================================================================================
 # Versions
 # ========================================================================================
 
 echo "Installing development browsers..."
-brew cask install firefox-developer-edition # https://www.mozilla.org/en-US/firefox/developer/
-brew cask install google-chrome-dev         # https://www.google.com/chrome/dev/
+[[ $(brew cask list --versions firefox-developer-edition) ]] || brew cask install firefox-developer-edition
+[[ $(brew cask list --versions google-chrome-dev) ]]         || brew cask install google-chrome-dev
 
 # ========================================================================================
 # Drivers
 # ========================================================================================
 
 echo "Installing drivers..."
-brew cask install ubiquiti-unifi-controller # https://unifi-network.ui.com/
-brew cask install wacom-tablet              # https://www.wacom.com/en-us/support/product-support/drivers
+[[ $(brew cask list --versions ubiquiti-unifi-controller) ]] || brew cask install ubiquiti-unifi-controller
+[[ $(brew cask list --versions wacom-tablet) ]]              || brew cask install wacom-tablet
 
 # ========================================================================================
 # Fonts
 # ========================================================================================
 
 echo "Installing serif fonts..."
-brew cask install font-roboto-slab      # https://fonts.google.com/specimen/Roboto+Slab
-brew cask install font-source-serif-pro # https://fonts.google.com/specimen/Source+Serif+Pro
+[[ $(brew cask list --versions font-roboto-slab) ]]          || brew cask install font-roboto-slab
+[[ $(brew cask list --versions font-source-serif-pro) ]]     || brew cask install font-source-serif-pro
 
 echo "Installing sans serif fonts..."
-brew cask install font-hind                # https://fonts.google.com/specimen/Hind
-brew cask install font-inter               # https://fonts.google.com/specimen/Inter
-brew cask install font-lato                # https://fonts.google.com/specimen/Lato
-brew cask install font-open-sans           # https://fonts.google.com/specimen/Open+Sans
-brew cask install font-open-sans-condensed # https://fonts.google.com/specimen/Open+Sans+Condensed
-brew cask install font-roboto              # https://fonts.google.com/specimen/Roboto
-brew cask install font-roboto-condensed    # https://fonts.google.com/specimen/Roboto+Condensed
-brew cask install font-source-sans-pro     # https://fonts.google.com/specimen/Source+Sans+Pro
+[[ $(brew cask list --versions font-hind) ]]                 || brew cask install font-hind
+[[ $(brew cask list --versions font-inter) ]]                || brew cask install font-inter
+[[ $(brew cask list --versions font-lato) ]]                 || brew cask install font-lato
+[[ $(brew cask list --versions font-open-sans) ]]            || brew cask install font-open-sans
+[[ $(brew cask list --versions font-open-sans-condensed) ]]  || brew cask install font-open-sans-condensed
+[[ $(brew cask list --versions font-roboto) ]]               || brew cask install font-roboto
+[[ $(brew cask list --versions font-roboto-condensed) ]]     || brew cask install font-roboto-condensed
+[[ $(brew cask list --versions font-source-sans-pro) ]]      || brew cask install font-source-sans-pro
+[[ $(brew cask list --versions font-ubuntu) ]]               || brew cask install font-ubuntu
+[[ $(brew cask list --versions font-ubuntu-condensed) ]]     || brew cask install font-ubuntu-condensed
 
 echo "Installing monospace fonts..."
-brew cask install font-cascadia-mono  # https://github.com/microsoft/cascadia-code
-brew cask install font-hack           # https://github.com/source-foundry/Hack
-brew cask install font-inconsolata    # https://fonts.google.com/specimen/Inconsolata
-brew cask install font-input          # https://input.fontbureau.com/
-brew cask install font-fira-code      # https://github.com/tonsky/FiraCode
-brew cask install font-jetbrains-mono # https://github.com/JetBrains/JetBrainsMono
-brew cask install font-roboto-mono    # https://fonts.google.com/specimen/Roboto+Mono
+[[ $(brew cask list --versions font-cascadia-mono) ]]        || brew cask install font-cascadia-mono
+[[ $(brew cask list --versions font-hack) ]]                 || brew cask install font-hack
+[[ $(brew cask list --versions font-inconsolata) ]]          || brew cask install font-inconsolata
+[[ $(brew cask list --versions font-input) ]]                || brew cask install font-input
+[[ $(brew cask list --versions font-fira-code) ]]            || brew cask install font-fira-code
+[[ $(brew cask list --versions font-jetbrains-mono) ]]       || brew cask install font-jetbrains-mono
+[[ $(brew cask list --versions font-roboto-mono) ]]          || brew cask install font-roboto-mono
+[[ $(brew cask list --versions font-ubuntu-mono) ]]          || brew cask install font-ubuntu-mono
 
 # ========================================================================================
 # Cleanup

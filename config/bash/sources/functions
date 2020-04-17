@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
 # ========================================================================================
-# Functions
+# Git Functions (Credit to Zach Holman)
+# https://github.com/holman/dotfiles/blob/master/zsh/prompt.zsh
 # ========================================================================================
 
 git_prompt_info() {
@@ -17,4 +18,23 @@ git_status() {
       echo -en $RED$(__git_ps1 " [%s]")$RESET
     fi
   fi
+}
+
+# ========================================================================================
+# Path Functions (Credit to Anish Athalye)
+# https://github.com/anishathalye/dotfiles/blob/master/shell/functions.sh
+# ========================================================================================
+
+path_remove() {
+  PATH=$(echo -n "$PATH" | awk -v RS=: -v ORS=: "\$0 != \"$1\"" | sed 's/:$//')
+}
+
+path_append() {
+  path_remove "$1"
+  PATH="${PATH:+"$PATH:"}$1"
+}
+
+path_prepend() {
+  path_remove "$1"
+  PATH="$1${PATH:+":$PATH"}"
 }
