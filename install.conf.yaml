@@ -15,9 +15,9 @@
   - ~/torrents
   - ~/sync
 - shell:
-  - [mv $(pwd) ~/dev/dotfiles, "Moving cloned repo to ~/dev directory..."]
+  - [mv "$(pwd)" ~/dev/dotfiles, "Moving cloned repo to ~/dev directory..."]
   - [cd ~/dev/dotfiles, "Moving into ~/dev directory..."]
-  - [BASEDIR=$(pwd), "Resetting BASEDIR variable..."]
+  - [BASEDIR="$(pwd)", "Resetting BASEDIR variable..."]
   - [./config/homebrew/install, "Installing Homebrew, taps, formulae and casks..."]
   - [./config/macos/install, "Configuring macOS..."]
   - [./config/asdf/install, "Installing asdf languages..."]
