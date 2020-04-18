@@ -1,12 +1,14 @@
 #!/usr/bin/env bash
 
+source ${BASH_SOURCE%/*}/../bash/sources/colors
+
 # ========================================================================================
 # GPG Keys
 # ========================================================================================
 
-echo "Generating GPG keys..."
+printf "${BOLD}${PURPLE}==> [GNU Privacy Guard]${NORMAL} ${BOLD}Generating GPG keys${NORMAL}\n"
 
 # generate GPG key
-generate_gpg_key
+gpg_generate_key
 
-echo "Done."
+printf "Done.\n\n"

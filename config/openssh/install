@@ -1,12 +1,13 @@
 #!/usr/bin/env bash
 
+source ${BASH_SOURCE%/*}/../bash/sources/colors
+
 # ========================================================================================
 # SSH Keys
 # ========================================================================================
 
-echo "Generating SSH keys..."
+printf "${BOLD}${PURPLE}==> [OpenSSH]${NORMAL} ${BOLD}Generating SSH keys${NORMAL}\n"
 
-# generate SSH key
-generate_ssh_key
+ssh_generate_key
 
-echo "Done."
+printf "Done.\n\n"

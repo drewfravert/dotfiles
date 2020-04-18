@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
+source ${BASH_SOURCE%/*}/../bash/sources/colors
+
 # ========================================================================================
-# Git Install
+# Git
 # ========================================================================================
 
-# create the local config
+printf "${BOLD}${PURPLE}==> [Git]${NORMAL} ${BOLD}Creating ${GREEN}~/.gitconfig.local${NORMAL}\n"
 touch ~/.gitconfig.local
-
-# append the given input to the local config
 cat >> ~/.gitconfig.local <<EOF
 [user]
 
@@ -16,3 +16,4 @@ cat >> ~/.gitconfig.local <<EOF
   signingkey = $GIT_SIGNING_KEY
 
 EOF
+printf "Done.\n\n"

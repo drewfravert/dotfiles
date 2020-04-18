@@ -1,35 +1,59 @@
 #!/usr/bin/env bash
 
+source ${BASH_SOURCE%/*}/../bash/sources/colors
+
+# ========================================================================================
+# Variables
+# ========================================================================================
+
+languages=(
+  "elixir"
+  "python"
+  "ruby"
+)
+
+# ========================================================================================
+# Helpers
+# ========================================================================================
+
+install_languages() {
+  for language in ${languages[@]}; do
+    printf "${BOLD}${PURPLE}==> [asdf]${NORMAL} ${BOLD}Installing package ${GREEN}$language${NORMAL}\n"
+
+    # ensure the language plugin is installed and up to date
+    if [[ $(asdf plugin list | grep -i $language) ]]; then
+      asdf plugin update $language &> /dev/null
+      printf "${language^} plugin is up to date.\n"
+    else
+      printf "${BOLD}${BLUE}==>${NORMAL} ${BOLD}Installing ${language^} plugin${NORMAL}\n"
+      asdf plugin add $language
+    fi
+
+    latest="$(asdf latest $language)"
+
+    # ensure the latest version of the language is installed
+    if [[ $(asdf list $language 2> /dev/null | grep -i $latest) ]]; then
+      printf "${language^} version $latest is installed.\n"
+    else
+      printf "${BOLD}${BLUE}==>${NORMAL} ${BOLD}Installing ${language^} version $latest${NORMAL}\n"
+      asdf install $language latest
+    fi
+
+    # ensure the latest version of the language is set globally
+    if [[ $(asdf current $language | grep -i $latest) ]]; then
+      printf "${language^} version $latest is set globally.\n"
+    else
+      printf "${BOLD}${BLUE}==>${NORMAL} ${BOLD}Setting global ${language^} version to $latest${NORMAL}\n"
+      asdf global $language $latest
+    fi
+
+    printf "\n"
+  done
+  unset language
+}
+
 # ========================================================================================
 # asdf
 # ========================================================================================
 
-echo "Installing asdf languages..."
-echo "Installing language plugins..."
-
-# language plugins
-asdf plugin add elixir
-asdf plugin add erlang
-asdf plugin add golang
-asdf plugin add python
-asdf plugin add ruby
-
-echo "Installing language binaries..."
-
-# language binaries
-asdf install elixir latest # https://elixir-lang.org/
-asdf install erlang latest # https://www.erlang.org/
-asdf install golang latest # https://golang.org/
-asdf install python latest # https://www.python.org/
-asdf install ruby latest   # https://www.ruby-lang.org/en/
-
-echo "Setting global versions..."
-
-# language binaries
-asdf global elixir $(asdf latest elixir)
-asdf global erlang $(asdf latest erlang)
-asdf global golang $(asdf latest golang)
-asdf global python $(asdf latest python)
-asdf global ruby $(asdf latest ruby)
-
-echo "Done."
+install_languages

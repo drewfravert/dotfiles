@@ -1,5 +1,46 @@
 #!/usr/bin/env bash
 
+source ${BASH_SOURCE%/*}/../bash/sources/colors
+
+# ========================================================================================
+# Variables
+# ========================================================================================
+
+extensions=(
+  "mrmlnc.vscode-apache"
+  "elixir-lsp.elixir-ls"
+  "craigmaslowski.erb"
+  "dbaeumer.vscode-eslint"
+  "eamodio.gitlens"
+  "zhuangtongfa.material-theme"
+  "mhmadhamster.postcss-language"
+  "ms-vscode-remote.vscode-remote-extensionpack"
+  "rebornix.ruby"
+  "castwide.solargraph"
+  "octref.vetur"
+  "wingrunr21.vscode-ruby"
+  "sdras.vue-vscode-snippets"
+)
+
+# ========================================================================================
+# Helpers
+# ========================================================================================
+
+install_extensions() {
+  for extension in ${extensions[@]}; do
+    printf "${BOLD}${PURPLE}==> [VS Code]${NORMAL} ${BOLD}Installing extension ${GREEN}$extension${NORMAL}\n"
+
+    if [[ $(code --list-extensions | grep -i $extension) ]]; then
+      printf "Extension installed.\n"
+    else
+      code --install-extension $extension
+    fi
+
+    printf "\n"
+  done
+  unset extension
+}
+
 # ========================================================================================
 # VS Code
 # ========================================================================================
@@ -8,17 +49,4 @@
 # keybindings.json
 # settings.json
 
-# install extensions
-code --install-extension mrmlnc.vscode-apache
-code --install-extension elixir-lsp.elixir-ls
-code --install-extension craigmaslowski.erb
-code --install-extension dbaeumer.vscode-eslint
-code --install-extension eamodio.gitlens
-code --install-extension zhuangtongfa.material-theme
-code --install-extension mhmadhamster.postcss-language
-code --install-extension ms-vscode-remote.vscode-remote-extensionpack
-code --install-extension rebornix.ruby
-code --install-extension castwide.solargraph
-code --install-extension octref.vetur
-code --install-extension wingrunr21.vscode-ruby
-code --install-extension sdras.vue-vscode-snippets
+install_extensions

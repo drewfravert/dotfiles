@@ -1,39 +1,46 @@
 #!/usr/bin/env bash
 
+source ${BASH_SOURCE%/*}/../bash/sources/colors
+
+# ========================================================================================
+# Variables
+# ========================================================================================
+
+packages=(
+  "typescript"
+  "@vue/cli"
+  "create-react-app"
+  "babel-eslint"
+  "eslint"
+  "eslint-config-prettier"
+  "eslint-plugin-prettier"
+  "prettier"
+  "stylelint"
+  "stylelint-config-prettier"
+  "stylelint-prettier"
+  "fkill-cli"
+  "json-server"
+  "spoof"
+  "tldr"
+)
+
+# ========================================================================================
+# Helpers
+# ========================================================================================
+
+install_packages() {
+  for package in ${packages[@]}; do
+    printf "${BOLD}${PURPLE}==> [Yarn]${NORMAL} ${BOLD}Installing package ${GREEN}$package${NORMAL}\n"
+
+    yarn global add $package
+
+    printf "\n"
+  done
+  unset package
+}
+
 # ========================================================================================
 # Yarn
 # ========================================================================================
 
-echo "Installing global yarn packages..."
-echo "Installing languages..."
-
-# languages
-yarn global add typescript # https://github.com/Microsoft/TypeScript
-
-echo "Installing CLIs..."
-
-# CLIs
-yarn global add @vue/cli         # https://github.com/vuejs/vue-cli
-yarn global add create-react-app # https://github.com/facebook/create-react-app
-
-echo "Installing linters..."
-
-# linters
-yarn global add babel-eslint              # https://github.com/babel/babel-eslint
-yarn global add eslint                    # https://github.com/eslint/eslint
-yarn global add eslint-config-prettier    # https://github.com/prettier/eslint-config-prettier
-yarn global add eslint-plugin-prettier    # https://github.com/prettier/eslint-plugin-prettier
-yarn global add prettier                  # https://github.com/prettier/prettier
-yarn global add stylelint                 # https://github.com/stylelint/stylelint
-yarn global add stylelint-config-prettier # https://github.com/prettier/stylelint-config-prettier
-yarn global add stylelint-prettier        # https://github.com/prettier/stylelint-prettier
-
-echo "Installing helpers..."
-
-# miscellaneous
-yarn global add fkill-cli   # https://github.com/sindresorhus/fkill-cli
-yarn global add json-server # https://github.com/typicode/json-server
-yarn global add spoof       # https://github.com/feross/spoof
-yarn global add tldr        # https://github.com/tldr-pages/tldr-node-client
-
-echo "Done."
+install_packages

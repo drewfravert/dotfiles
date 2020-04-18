@@ -37,7 +37,8 @@ alias paths="echo -e ${PATH//:/\\n}"
 alias reload="source ~/.bash_profile"
 
 # update everything
-alias update="macupdate; asdfupdate; brewupdate; yarnupdate; gemupdate"
+alias updateglobal="macupdate; asdfupdate; brewupdate; yarnglobal; gemglobal"
+alias updatelocal="yarnlocal; gemlocal"
 
 # ========================================================================================
 # Shortcuts
