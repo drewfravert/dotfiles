@@ -7,3 +7,6 @@
 # output colors
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
+
+# export terminal name for gpg
+export GPG_TTY=$(tty)

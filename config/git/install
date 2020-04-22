@@ -7,13 +7,14 @@ source ${BASH_SOURCE%/*}/../bash/sources/colors
 # ========================================================================================
 
 printf "${BOLD}${PURPLE}==> [Git]${NORMAL} ${BOLD}Creating ${GREEN}~/.gitconfig.local${NORMAL}\n"
+rm ~/.gitconfig.local
 touch ~/.gitconfig.local
 cat >> ~/.gitconfig.local <<EOF
 [user]
 
   name = ${GIT_NAME}
   email = ${GIT_EMAIL}
-  signingkey = ${GIT_SIGNING_KEY}
+  signingKey = ${GIT_SIGNING_KEY}
 
 EOF
 printf "Done.\n\n"
