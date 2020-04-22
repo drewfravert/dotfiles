@@ -10,4 +10,15 @@ printf "${BOLD}${PURPLE}==> [OpenSSH]${NORMAL} ${BOLD}Generating SSH keys${NORMA
 
 ssh_generate_key
 
+if [[ ! -r ~/.ssh/config ]]; then
+  touch ~/.ssh/config
+fi
+
+cat >> ~/.ssh/config <<EOF
+Host *
+  UseKeychain yes
+  AddKeysToAgent yes
+  IdentityFile ~/.ssh/id_rsa
+EOF
+
 printf "Done.\n\n"
