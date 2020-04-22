@@ -36,7 +36,6 @@ formulae=(
 applications=(
   "1password"
   "1password-cli"
-  "adobe-acrobat-reader"
   "brave-browser"
   "cleanmymac"
   "coda"
@@ -49,7 +48,6 @@ applications=(
   "google-chrome-dev"
   "gpg-suite"
   "graphiql"
-  "hyper"
   "imageoptim"
   "iterm2"
   "ivpn"
@@ -71,6 +69,7 @@ applications=(
 )
 
 drivers=(
+  "adoptopenjdk8"
   "ubiquiti-unifi-controller"
   "wacom-tablet"
 )
@@ -123,12 +122,12 @@ install_homebrew() {
 
 install_formulae() {
   for formula in ${formulae[@]}; do
-    printf "${BOLD}${PURPLE}==> [Homebrew]${NORMAL} ${BOLD}Installing formula ${GREEN}$formula${NORMAL}\n"
+    printf "${BOLD}${PURPLE}==> [Homebrew]${NORMAL} ${BOLD}Installing formula ${GREEN}${formula}${NORMAL}\n"
 
-    if [[ $(brew list --versions $formula 2> /dev/null) ]]; then
+    if [[ $(brew list --versions ${formula} 2> /dev/null) ]]; then
       printf "Formula installed.\n"
     else
-      brew install $formula
+      brew install ${formula}
     fi
 
     printf "\n"
@@ -138,12 +137,12 @@ install_formulae() {
 
 install_applications() {
   for application in ${applications[@]}; do
-    printf "${BOLD}${PURPLE}==> [Homebrew]${NORMAL} ${BOLD}Installing application ${GREEN}$application${NORMAL}\n"
+    printf "${BOLD}${PURPLE}==> [Homebrew]${NORMAL} ${BOLD}Installing application ${GREEN}${application}${NORMAL}\n"
 
-    if [[ $(brew cask list --versions $application 2> /dev/null) ]]; then
+    if [[ $(brew cask list --versions ${application} 2> /dev/null) ]]; then
       printf "Application installed.\n"
     else
-      brew cask install $application
+      brew cask install ${application}
     fi
 
     printf "\n"
@@ -153,12 +152,12 @@ install_applications() {
 
 install_drivers() {
   for driver in ${drivers[@]}; do
-    printf "${BOLD}${PURPLE}==> [Homebrew]${NORMAL} ${BOLD}Installing driver ${GREEN}$driver${NORMAL}\n"
+    printf "${BOLD}${PURPLE}==> [Homebrew]${NORMAL} ${BOLD}Installing driver ${GREEN}${driver}${NORMAL}\n"
 
-    if [[ $(brew cask list --versions $driver 2> /dev/null) ]]; then
+    if [[ $(brew cask list --versions ${driver} 2> /dev/null) ]]; then
       printf "Driver installed.\n"
     else
-      brew cask install $driver
+      brew cask install ${driver}
     fi
 
     printf "\n"
@@ -168,12 +167,12 @@ install_drivers() {
 
 install_fonts() {
   for font in ${fonts[@]}; do
-    printf "${BOLD}${PURPLE}==> [Homebrew]${NORMAL} ${BOLD}Installing font ${GREEN}$font${NORMAL}\n"
+    printf "${BOLD}${PURPLE}==> [Homebrew]${NORMAL} ${BOLD}Installing font ${GREEN}${font}${NORMAL}\n"
 
-    if [[ $(brew cask list --versions $font 2> /dev/null) ]]; then
+    if [[ $(brew cask list --versions ${font} 2> /dev/null) ]]; then
       printf "Font installed.\n"
     else
-      brew cask install $font
+      brew cask install ${font}
     fi
 
     printf "\n"

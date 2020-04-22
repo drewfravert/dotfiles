@@ -30,9 +30,9 @@ packages=(
 
 install_packages() {
   for package in ${packages[@]}; do
-    printf "${BOLD}${PURPLE}==> [Yarn]${NORMAL} ${BOLD}Installing package ${GREEN}$package${NORMAL}\n"
+    printf "${BOLD}${PURPLE}==> [Yarn]${NORMAL} ${BOLD}Installing package ${GREEN}${package}${NORMAL}\n"
 
-    yarn global add $package
+    yarn global add ${package}
 
     printf "\n"
   done

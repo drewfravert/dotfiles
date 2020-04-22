@@ -18,38 +18,39 @@ languages=(
 
 install_languages() {
   for language in ${languages[@]}; do
-    printf "${BOLD}${PURPLE}==> [asdf]${NORMAL} ${BOLD}Installing package ${GREEN}$language${NORMAL}\n"
+    printf "${BOLD}${PURPLE}==> [asdf]${NORMAL} ${BOLD}Installing package ${GREEN}${language}${NORMAL}\n"
 
     # ensure the language plugin is installed and up to date
-    if [[ $(asdf plugin list | grep -i $language) ]]; then
-      asdf plugin update $language &> /dev/null
+    if [[ $(asdf plugin list | grep -i ${language}) ]]; then
+      asdf plugin update ${language} &> /dev/null
       printf "${language^} plugin is up to date.\n"
     else
       printf "${BOLD}${BLUE}==>${NORMAL} ${BOLD}Installing ${language^} plugin${NORMAL}\n"
-      asdf plugin add $language
+      asdf plugin add ${language}
     fi
 
-    latest="$(asdf latest $language)"
+    latest="$(asdf latest ${language})"
 
     # ensure the latest version of the language is installed
-    if [[ $(asdf list $language 2> /dev/null | grep -i $latest) ]]; then
-      printf "${language^} version $latest is installed.\n"
+    if [[ $(asdf list ${language} 2> /dev/null | grep -i ${latest}) ]]; then
+      printf "${language^} version ${latest} is installed.\n"
     else
-      printf "${BOLD}${BLUE}==>${NORMAL} ${BOLD}Installing ${language^} version $latest${NORMAL}\n"
-      asdf install $language latest
+      printf "${BOLD}${BLUE}==>${NORMAL} ${BOLD}Installing ${language^} version ${latest}${NORMAL}\n"
+      asdf install ${language} latest
     fi
 
     # ensure the latest version of the language is set globally
-    if [[ $(asdf current $language | grep -i $latest) ]]; then
-      printf "${language^} version $latest is set globally.\n"
+    if [[ $(asdf current ${language} | grep -i ${latest}) ]]; then
+      printf "${language^} version ${latest} is set globally.\n"
     else
-      printf "${BOLD}${BLUE}==>${NORMAL} ${BOLD}Setting global ${language^} version to $latest${NORMAL}\n"
-      asdf global $language $latest
+      printf "${BOLD}${BLUE}==>${NORMAL} ${BOLD}Setting global ${language^} version to ${latest}${NORMAL}\n"
+      asdf global ${language} ${latest}
     fi
 
     printf "\n"
   done
   unset language
+  unset latest
 }
 
 # ========================================================================================

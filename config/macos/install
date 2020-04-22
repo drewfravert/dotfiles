@@ -28,8 +28,8 @@ read -p "Computer Name: " _computername
 read -p "LocalHost Name: " _localhostname
 
 # set desired computer and host names
-sudo scutil --set ComputerName $_computername
-sudo scutil --set LocalHostName $_localhostname
+sudo scutil --set ComputerName ${_computername}
+sudo scutil --set LocalHostName ${_localhostname}
 
 # ========================================================================================
 # General
@@ -136,29 +136,29 @@ plistbuddy="/usr/libexec/PlistBuddy -c"
 finderplist="~/Library/Preferences/com.apple.finder.plist"
 
 # show icon info
-$plistbuddy "Set :DesktopViewSettings:IconViewSettings:showItemInfo true" $finderplist
-$plistbuddy "Set :FK_StandardViewSettings:IconViewSettings:showItemInfo true" $finderplist
-$plistbuddy "Set :StandardViewSettings:IconViewSettings:showItemInfo true" $finderplist
+${plistbuddy} "Set :DesktopViewSettings:IconViewSettings:showItemInfo true" ${finderplist}
+${plistbuddy} "Set :FK_StandardViewSettings:IconViewSettings:showItemInfo true" ${finderplist}
+${plistbuddy} "Set :StandardViewSettings:IconViewSettings:showItemInfo true" ${finderplist}
 
 # position icon info to the right of the icons
-$plistbuddy "Set DesktopViewSettings:IconViewSettings:labelOnBottom false" $finderplist
-$plistbuddy "Set FK_StandardViewSettings:IconViewSettings:labelOnBottom false" $finderplist
-$plistbuddy "Set StandardViewSettings:IconViewSettings:labelOnBottom false" $finderplist
+${plistbuddy} "Set DesktopViewSettings:IconViewSettings:labelOnBottom false" ${finderplist}
+${plistbuddy} "Set FK_StandardViewSettings:IconViewSettings:labelOnBottom false" ${finderplist}
+${plistbuddy} "Set StandardViewSettings:IconViewSettings:labelOnBottom false" ${finderplist}
 
 # enable snap-to-grid for icons
-$plistbuddy "Set :DesktopViewSettings:IconViewSettings:arrangeBy grid" $finderplist
-$plistbuddy "Set :FK_StandardViewSettings:IconViewSettings:arrangeBy grid" $finderplist
-$plistbuddy "Set :StandardViewSettings:IconViewSettings:arrangeBy grid" $finderplist
+${plistbuddy} "Set :DesktopViewSettings:IconViewSettings:arrangeBy grid" ${finderplist}
+${plistbuddy} "Set :FK_StandardViewSettings:IconViewSettings:arrangeBy grid" ${finderplist}
+${plistbuddy} "Set :StandardViewSettings:IconViewSettings:arrangeBy grid" ${finderplist}
 
 # set icon grid spacing
-$plistbuddy "Set :DesktopViewSettings:IconViewSettings:gridSpacing 96" $finderplist
-$plistbuddy "Set :FK_StandardViewSettings:IconViewSettings:gridSpacing 60" $finderplist
-$plistbuddy "Set :StandardViewSettings:IconViewSettings:gridSpacing 60" $finderplist
+${plistbuddy} "Set :DesktopViewSettings:IconViewSettings:gridSpacing 96" ${finderplist}
+${plistbuddy} "Set :FK_StandardViewSettings:IconViewSettings:gridSpacing 60" ${finderplist}
+${plistbuddy} "Set :StandardViewSettings:IconViewSettings:gridSpacing 60" ${finderplist}
 
 # set icon size
-$plistbuddy "Set :DesktopViewSettings:IconViewSettings:iconSize 36" $finderplist
-$plistbuddy "Set :FK_StandardViewSettings:IconViewSettings:iconSize 36" $finderplist
-$plistbuddy "Set :StandardViewSettings:IconViewSettings:iconSize 36" $finderplist
+${plistbuddy} "Set :DesktopViewSettings:IconViewSettings:iconSize 36" ${finderplist}
+${plistbuddy} "Set :FK_StandardViewSettings:IconViewSettings:iconSize 36" ${finderplist}
+${plistbuddy} "Set :StandardViewSettings:IconViewSettings:iconSize 36" ${finderplist}
 
 # unset convenience variables
 unset plistbuddy
@@ -186,8 +186,17 @@ killall SystemUIServer
 
 printf "${BOLD}${PURPLE}==> [macOS]${NORMAL} ${BOLD}Installing App Store software${NORMAL}\n"
 
-mas install 497799835 # Xcode
 mas install 420212497 # Byword
 mas install 405772121 # LittleIpsum
+mas install 497799835 # Xcode
 
-echo "Done."
+
+# ========================================================================================
+# App Store
+# ========================================================================================
+
+printf "${BOLD}${PURPLE}==> [macOS]${NORMAL} ${BOLD}Rebuilding Spotlight index${NORMAL}\n"
+
+sudo mdutil -E /
+
+printf "Done.\n\n"

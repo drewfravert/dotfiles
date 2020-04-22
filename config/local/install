@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+
+source ${BASH_SOURCE%/*}/../bash/sources/colors
+
+# ========================================================================================
+# Local Environment
+# ========================================================================================
+
+printf "${BOLD}${PURPLE}==> [Environment]${NORMAL} ${BOLD}Configuring local environment${NORMAL}\n"
+
+read -p "Git Name: " _git_name
+read -p "Git Email: " _git_email
+read -p "Git Signing Key: " _git_signing_key
+
+printf "${BOLD}${PURPLE}==> [Environment]${NORMAL} ${BOLD}Creating ${GREEN}~/.local/profile${NORMAL}\n"
+
+touch ~/.local/profile
+cat >> ~/.local/profile <<EOF
+#!/usr/bin/env bash
+
+# ========================================================================================
+# Variables
+# ========================================================================================
+
+# development
+export EDITOR="code" # "vsc" also works
+
+# git information
+export GIT_NAME="$_git_name"
+export GIT_EMAIL="$_git_email"
+export GIT_SIGNING_KEY="$_git_signing_key"
+
+EOF
+
+printf "Done.\n\n"

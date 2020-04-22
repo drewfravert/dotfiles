@@ -1,21 +1,15 @@
 #!/usr/bin/env bash
 
 # ========================================================================================
-# Git Functions (Credit to Zach Holman)
-# https://github.com/holman/dotfiles/blob/master/zsh/prompt.zsh
+# Git Functions
 # ========================================================================================
-
-git_prompt_info() {
-  ref=$(git symbolic-ref HEAD 2>/dev/null) || return
-  echo "${ref#refs/heads/}"
-}
 
 git_status() {
   if git branch &> /dev/null; then
     if git status | grep "nothing to commit" &> /dev/null; then
-      echo -en $GREEN$(__git_ps1 " [%s]")$RESET
+      echo -en ${GREEN}$(__git_ps1 " [%s]")${RESET}
     else
-      echo -en $RED$(__git_ps1 " [%s]")$RESET
+      echo -en ${RED}$(__git_ps1 " [%s]")${RESET}
     fi
   fi
 }
@@ -26,7 +20,7 @@ git_status() {
 # ========================================================================================
 
 path_remove() {
-  PATH=$(echo -n "$PATH" | awk -v RS=: -v ORS=: "\$0 != \"$1\"" | sed 's/:$//')
+  PATH=$(echo -n "${PATH}" | awk -v RS=: -v ORS=: "\$0 != \"$1\"" | sed 's/:$//')
 }
 
 path_append() {

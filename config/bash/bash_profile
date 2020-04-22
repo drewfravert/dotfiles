@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-source ~/.dotfiles/bash/sources/paths
+source ~/.dotfiles/bash/sources/functions
 source ~/.dotfiles/bash/sources/options
 source ~/.dotfiles/bash/sources/exports
+source ~/.dotfiles/bash/sources/paths
 source ~/.dotfiles/bash/sources/aliases
-source ~/.dotfiles/bash/sources/functions
 source ~/.dotfiles/bash/sources/completion
 source ~/.dotfiles/bash/sources/prompt
 source ~/.dotfiles/bash/sources/dotfiles

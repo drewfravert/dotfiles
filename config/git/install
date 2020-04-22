@@ -11,9 +11,9 @@ touch ~/.gitconfig.local
 cat >> ~/.gitconfig.local <<EOF
 [user]
 
-  name = $GIT_NAME
-  email = $GIT_EMAIL
-  signingkey = $GIT_SIGNING_KEY
+  name = ${GIT_NAME}
+  email = ${GIT_EMAIL}
+  signingkey = ${GIT_SIGNING_KEY}
 
 EOF
 printf "Done.\n\n"

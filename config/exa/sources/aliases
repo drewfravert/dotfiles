@@ -5,4 +5,4 @@
 # ========================================================================================
 
 # set exa as the default `ls` command
-alias ls="exa"
+alias ls="exa --all --classify --extended --git --group --header --long"

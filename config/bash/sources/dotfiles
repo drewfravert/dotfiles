@@ -5,14 +5,14 @@
 # ========================================================================================
 
 # load private environment
-if [[ -r ~/.localrc ]]; then
-  source ~/.localrc
+if [[ -r ~/.local/profile ]]; then
+  source ~/.local/profile
 fi
 
 # load dotfile configurations
 for file in ~/.dotfiles/**/config; do
-	if [[ -r $file ]]; then
-    source $file
+	if [[ -r ${file} ]]; then
+    source ${file}
   fi
 done
 unset file

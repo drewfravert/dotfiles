@@ -85,5 +85,8 @@ NEWLINE="\n"
 TIME="\T"
 
 # output
-export PS1="$I_BLACK$DIRECTORY$RESET$(git_status)\n-> $RESET"
-# "$I_BLACK[$USER@$MACHINE] $TIME $WHITE$DIRECTORY$RESET$(git_status) \$ $RESET"
+function prompt_command() {
+  PS1="${I_BLACK}${DIRECTORY}${RESET}$(git_status)\n-> ${RESET}"
+}
+
+PROMPT_COMMAND=prompt_command

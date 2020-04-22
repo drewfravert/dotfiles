@@ -28,12 +28,12 @@ extensions=(
 
 install_extensions() {
   for extension in ${extensions[@]}; do
-    printf "${BOLD}${PURPLE}==> [VS Code]${NORMAL} ${BOLD}Installing extension ${GREEN}$extension${NORMAL}\n"
+    printf "${BOLD}${PURPLE}==> [VS Code]${NORMAL} ${BOLD}Installing extension ${GREEN}${extension}${NORMAL}\n"
 
-    if [[ $(code --list-extensions | grep -i $extension) ]]; then
+    if [[ $(code --list-extensions | grep -i ${extension}) ]]; then
       printf "Extension installed.\n"
     else
-      code --install-extension $extension
+      code --install-extension ${extension}
     fi
 
     printf "\n"

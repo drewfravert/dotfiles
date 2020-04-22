@@ -31,7 +31,7 @@ alias mv="mv -iv"
 # ========================================================================================
 
 # list current paths
-alias paths="echo -e ${PATH//:/\\n}"
+alias paths="echo \"${PATH//:/$'\n'}\""
 
 # reload profile
 alias reload="source ~/.bash_profile"

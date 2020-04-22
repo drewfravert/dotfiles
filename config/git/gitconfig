@@ -1,5 +1,4 @@
 [alias]
-
   g = "git"
   ga = "git add --all"
   gc = "git commit -v -m"
@@ -19,23 +18,24 @@
   contributors = "shortlog --summary --numbered"
 
 [color]
-
   ui = true
 
 [code]
-
 	attributesfile = ~/.gitattributes
   excludesfile = ~/.gitignore
   includesfile = ~/.gitconfig.local
 
 [commit]
-
   gpgsign = true
 
 [credential]
-
   helper = osxkeychain
 
 [help]
-
 	autocorrect = 1
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
