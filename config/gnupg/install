@@ -11,4 +11,15 @@ printf "${BOLD}${PURPLE}==> [GNU Privacy Guard]${NORMAL} ${BOLD}Generating GPG k
 # generate GPG key
 gpg_generate_key
 
+# add pinentry-mac as the default GPG pinentry program
+entry="pinentry-program /usr/local/bin/pinentry-mac"
+file=~/.gnupg/gpg-agent.conf
+
+if [[ ! $(grep ${entry} ${file}) ]]; then
+  echo ${entry} > ${file}
+fi
+
+unset entry
+unset file
+
 printf "Done.\n\n"

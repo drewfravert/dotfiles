@@ -25,6 +25,7 @@ formulae=(
   "mas"
   "node"
   "openssh"
+  "pinentry-mac"
   "postgresql"
   "ripgrep"
   "thefuck"
