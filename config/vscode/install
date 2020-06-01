@@ -8,7 +8,7 @@ source ${BASH_SOURCE%/*}/../bash/sources/colors
 
 extensions=(
   "mrmlnc.vscode-apache"
-  "elixir-lsp.elixir-ls"
+  "jakebecker.elixir-ls"
   "craigmaslowski.erb"
   "dbaeumer.vscode-eslint"
   "eamodio.gitlens"

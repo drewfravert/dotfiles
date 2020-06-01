@@ -49,8 +49,3 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
-
-# common folders
-alias desktop="cd ~/Desktop"
-alias documents="cd ~/Documents"
-alias downloads="cd ~/Downloads"

@@ -7,21 +7,17 @@ source ${BASH_SOURCE%/*}/../bash/sources/colors
 # ========================================================================================
 
 packages=(
-  "typescript"
   "@vue/cli"
-  "create-react-app"
   "babel-eslint"
+  "create-react-app"
   "eslint"
-  "eslint-config-prettier"
-  "eslint-plugin-prettier"
-  "prettier"
-  "stylelint"
-  "stylelint-config-prettier"
-  "stylelint-prettier"
   "fkill-cli"
   "json-server"
+  "lighthouse"
   "spoof"
+  "stylelint"
   "tldr"
+  "typescript"
 )
 
 # ========================================================================================
