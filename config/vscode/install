@@ -8,18 +8,21 @@ source ${BASH_SOURCE%/*}/../bash/sources/colors
 
 extensions=(
   "mrmlnc.vscode-apache"
+  "iampeterbanjo.elixirlinter"
   "jakebecker.elixir-ls"
   "craigmaslowski.erb"
   "dbaeumer.vscode-eslint"
+  "github.vscode-pull-request-github"
   "eamodio.gitlens"
+  "mjmlio.vscode-mjml"
   "zhuangtongfa.material-theme"
   "mhmadhamster.postcss-language"
-  "ms-vscode-remote.vscode-remote-extensionpack"
   "rebornix.ruby"
   "castwide.solargraph"
   "octref.vetur"
   "wingrunr21.vscode-ruby"
   "sdras.vue-vscode-snippets"
+  "redhat.vscode-yaml"
 )
 
 # ========================================================================================

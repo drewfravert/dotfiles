@@ -8,7 +8,6 @@ source ${BASH_SOURCE%/*}/../bash/sources/colors
 
 packages=(
   "@vue/cli"
-  "babel-eslint"
   "create-react-app"
   "eslint"
   "fkill-cli"

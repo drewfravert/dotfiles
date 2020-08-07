@@ -1,24 +1,13 @@
 # Dotfiles
-[![LICENSE](https://img.shields.io/badge/license-MIT-lightgrey.svg)](LICENSE.txt)
+Dotfiles for personal macOS environment.
 
-Dotfiles for personal macOS configuration.
-
-## Contents
 
 ## Installation
+I am using [dotbot](https://github.com/anishathalye/dotbot) to set things up. To install:
 
-Presumes that you have already installed Xcode's Command Line Tools with `xcode-select --install`
+  * Clone this repo with `git clone git@github.com:drewfravert/dotfiles.git`
+  * Run installation script with `./install`
 
-We are using dotbot to set things up. Steps:
-
-  * Clone this repo
-  * cd into dotfiles/ folder
-  * Run: ./install
-
-## Acknowledgements
-
-Dotbot
 
 ## License
-
 The code is available under the [MIT license](LICENSE.txt).

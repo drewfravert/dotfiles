@@ -8,13 +8,14 @@
       stdin: true
       stdout: true
 - shell:
-  - [git submodule update --init --recursive, "Installing submodules..."]
+    - [git submodule update --init --recursive, "Installing submodules..."]
 - clean: ["~"]
 - create:
-  - ~/dev
-  - ~/notes
-  - ~/torrents
-  - ~/sync
+    - ~/dev
+    - ~/notes
+    - ~/screenshots
+    - ~/sync
+    - ~/torrents
 - link:
     ~/.bash_profile: config/bash/bash_profile
     ~/.bashrc: config/bash/bashrc
@@ -25,13 +26,13 @@
     ~/.local/bin: config/local/bin
     ~/.vimrc: config/vim/vimrc
 - shell:
-  - [source ~/.bash_profile, "Reloading shell..."]
-  - [./config/homebrew/install, "Installing Homebrew, taps, formulae and casks..."]
-  - [./config/macos/install, "Configuring macOS..."]
-  - [./config/asdf/install, "Installing asdf languages..."]
-  - [./config/yarn/install, "Installing Yarn packages..."]
-  - [./config/openssh/install, "Configuring SSH keys..."]
-  - [./config/gnupg/install, "Configuring GPG keys..."]
-  - [./config/local/install, "Configuring local environment..."]
-  - [./config/git/install, "Configuring Git user information..."]
-  - [./config/vscode/install, "Configuring Visual Studio Code..."]
+    - [source ~/.bash_profile, "Reloading shell..."]
+    - [./config/homebrew/install, "Installing Homebrew, taps, formulae and casks..."]
+    - [./config/macos/install, "Configuring macOS..."]
+    - [./config/asdf/install, "Installing asdf languages..."]
+    - [./config/yarn/install, "Installing Yarn packages..."]
+    - [./config/openssh/install, "Configuring SSH keys..."]
+    - [./config/gnupg/install, "Configuring GPG keys..."]
+    - [./config/local/install, "Configuring local environment..."]
+    - [./config/git/install, "Configuring Git user information..."]
+    - [./config/vscode/install, "Configuring Visual Studio Code..."]
