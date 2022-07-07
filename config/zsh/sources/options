@@ -7,7 +7,6 @@
 setopt autocd
 setopt appendhistory
 setopt cdablevars
-setopt correctall
 setopt extendedglob
 setopt hist_ignore_all_dups
 setopt menucomplete

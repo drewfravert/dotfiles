@@ -30,21 +30,16 @@
   gpgsign = true
 
 [credential]
-	helper = osxkeychain
+  helper = osxkeychain
 
 [help]
-	autocorrect = 1
+  autocorrect = 1
 
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
 
 [pull]
   rebase = false
-
-[user]
-	name = drewfravert
-	email = drew@fravert.org
-  signingkey = BCB649CBBC2FCE69
