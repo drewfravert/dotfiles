@@ -1,45 +1,48 @@
 [alias]
-  a = "add --all"
-  c = "commit -v -m"
-  co = "checkout"
-  cob = "checkout -b"
-  cl = "clone --recursive"
-  d = "diff"
-  l = "log --graph --pretty --abbrev-commit"
-  pl = "pull --recurse-submodules"
-  pu = "push"
-  r = "remote -v"
-  s = "status"
-  t = "tag -l"
+	a = "add --all"
+	c = "commit -v -m"
+	co = "checkout"
+	cob = "checkout -b"
+	cl = "clone --recursive"
+	d = "diff"
+	l = "log --graph --pretty --abbrev-commit"
+	pl = "pull --recurse-submodules"
+	pu = "push"
+	r = "remote -v"
+	s = "status"
+	t = "tag -l"
 
-  aliases = config --get-regexp alias
-  amend = commit --amend --reuse-message=HEAD
-  contributors = "shortlog --summary --numbered"
+	aliases = config --get-regexp alias
+	amend = commit --amend --reuse-message=HEAD
+	contributors = "shortlog --summary --numbered"
 
 [color]
-  ui = true
+	ui = true
 
 [core]
-  attributesFile = ~/.gitattributes
-  excludesFile = ~/.gitignore
+	attributesFile = ~/.gitattributes
+	excludesFile = ~/.gitignore
 
 [include]
-  path = ~/.gitconfig.local
+	path = ~/.gitconfig.local
 
 [commit]
-  gpgsign = true
+	gpgsign = true
 
 [credential]
-  helper = osxkeychain
+	helper = osxkeychain
+
+[gpg]
+	program = /opt/homebrew/bin/gpg
 
 [help]
-  autocorrect = 1
+	autocorrect = 1
 
 [filter "lfs"]
-  clean = git-lfs clean -- %f
-  smudge = git-lfs smudge -- %f
-  process = git-lfs filter-process
-  required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
 
 [pull]
-  rebase = false
+	rebase = false

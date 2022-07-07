@@ -15,4 +15,5 @@ cat >> ~/.gitconfig.local <<EOF
   signingKey = ${GIT_SIGNING_KEY}
 
 EOF
+git config --global gpg.program "$(which gpg)"
 printf "Done.\n\n"
