@@ -1,11 +1,14 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
 # ========================================================================================
 # Helpers
 # ========================================================================================
 
 # update macos
-alias macupdate="sudo softwareupdate --install --all"
+alias osupdate="softwareupdate --install --all"
 
 # add blank space to OS dock
 alias addspacer="defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type="spacer-tile";}'; killall Dock"
+
+# open urls with brave
+alias brave="open -a 'Brave Browser.app'"

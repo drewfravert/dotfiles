@@ -1,6 +1,4 @@
-#!/usr/bin/env bash
-
-source ${BASH_SOURCE%/*}/../bash/sources/colors
+#!/usr/bin/env zsh
 
 # ========================================================================================
 # Variables
@@ -8,86 +6,55 @@ source ${BASH_SOURCE%/*}/../bash/sources/colors
 
 formulae=(
   "asdf"
-  "awscli"
-  "bash"
-  "bash-completion@2"
   "coreutils"
   "docker"
   "exa"
-  "exercism"
   "findutils"
   "fzf"
   "gh"
-  "gigalixir"
   "git"
   "gnupg"
   "grep"
   "imagemagick"
-  "mas"
   "node"
   "openssh"
   "pinentry-mac"
-  "postgresql"
   "ripgrep"
-  "thefuck"
-  "vim"
   "wget"
   "yarn"
+  "zsh"
+  "zsh-completions"
+  "zsh-syntax-highlighting"
 )
 
 applications=(
   "1password"
-  "brave-browser"
+  "brave-browser-dev"
   "cleanmymac"
-  "coda"
-  "docker"
   "figma"
-  "figmadaemon"
-  "firefox"
   "firefox-developer-edition"
   "github"
-  "google-chrome-dev"
-  "gpg-suite"
-  "graphiql"
+  "iina"
   "imageoptim"
   "iterm2"
   "ivpn"
   "ledger-live"
   "little-snitch"
-  "mamp"
   "pocket-casts"
-  "popcorn-time"
-  "postgres"
+  "postgres-unofficial"
   "postico"
-  "postman"
-  "resilio-sync"
+  "safari-technology-preview"
   "slack"
-  "spotify"
-  "the-unarchiver"
-  "tor-browser"
-  "transmission"
   "visual-studio-code"
-  "vlc"
 )
 
 drivers=(
-  "ubiquiti-unifi-controller"
   "wacom-tablet"
-  "yubico-yubikey-manager"
 )
 
 fonts=(
-  "font-cascadia-mono"
-  "font-fira-code"
-  "font-hack"
-  "font-ibm-plex-mono"
-  "font-inconsolata"
-  "font-input"
   "font-inter"
   "font-jetbrains-mono"
-  "font-open-sans"
-  "font-source-sans-pro"
-  "font-source-serif-pro"
 )
 
 # ========================================================================================
@@ -95,12 +62,12 @@ fonts=(
 # ========================================================================================
 
 install_homebrew() {
-  printf "${BOLD}${PURPLE}==> [Homebrew]${NORMAL} ${BOLD}Installing${NORMAL}\n"
+  printf "${FG_MAGENTA}==> [Homebrew] Installing${RESET}\n"
 
   if [[ $(which brew) ]]; then
     printf "Homebrew installed.\n\n"
 
-    printf "${BOLD}${PURPLE}==> [Homebrew]${NORMAL} ${BOLD}Updating${NORMAL}\n"
+    printf "${FG_MAGENTA}==> [Homebrew] Updating${RESET}\n"
     brew update
     brew upgrade
     printf "\n"
@@ -119,7 +86,7 @@ install_homebrew() {
 
 install_formulae() {
   for formula in ${formulae[@]}; do
-    printf "${BOLD}${PURPLE}==> [Homebrew]${NORMAL} ${BOLD}Installing formula ${GREEN}${formula}${NORMAL}\n"
+    printf "${FG_MAGENTA}==> [Homebrew] Installing formula ${FG_BOLD_GREEN}${formula}${RESET}\n"
 
     if [[ $(brew list --versions ${formula} 2> /dev/null) ]]; then
       printf "Formula installed.\n"
@@ -134,12 +101,12 @@ install_formulae() {
 
 install_applications() {
   for application in ${applications[@]}; do
-    printf "${BOLD}${PURPLE}==> [Homebrew]${NORMAL} ${BOLD}Installing application ${GREEN}${application}${NORMAL}\n"
+    printf "${FG_MAGENTA}==> [Homebrew] Installing application ${FG_BOLD_GREEN}${application}${RESET}\n"
 
     if [[ $(brew cask list --versions ${application} 2> /dev/null) ]]; then
       printf "Application installed.\n"
     else
-      brew cask install ${application}
+      brew install --cask ${application}
     fi
 
     printf "\n"
@@ -149,12 +116,12 @@ install_applications() {
 
 install_drivers() {
   for driver in ${drivers[@]}; do
-    printf "${BOLD}${PURPLE}==> [Homebrew]${NORMAL} ${BOLD}Installing driver ${GREEN}${driver}${NORMAL}\n"
+    printf "${FG_MAGENTA}==> [Homebrew] Installing driver ${FG_BOLD_GREEN}${driver}${RESET}\n"
 
     if [[ $(brew cask list --versions ${driver} 2> /dev/null) ]]; then
       printf "Driver installed.\n"
     else
-      brew cask install ${driver}
+      brew install --cask ${driver}
     fi
 
     printf "\n"
@@ -164,12 +131,12 @@ install_drivers() {
 
 install_fonts() {
   for font in ${fonts[@]}; do
-    printf "${BOLD}${PURPLE}==> [Homebrew]${NORMAL} ${BOLD}Installing font ${GREEN}${font}${NORMAL}\n"
+    printf "${FG_MAGENTA}==> [Homebrew] Installing font ${FG_BOLD_GREEN}${font}${RESET}\n"
 
     if [[ $(brew cask list --versions ${font} 2> /dev/null) ]]; then
       printf "Font installed.\n"
     else
-      brew cask install ${font}
+      brew install --cask ${font}
     fi
 
     printf "\n"
@@ -187,6 +154,6 @@ install_applications
 install_drivers
 install_fonts
 
-printf "${BOLD}${PURPLE}==> [Homebrew]${NORMAL} ${BOLD}Cleaning up${NORMAL}\n"
+printf "${FG_MAGENTA}==> [Homebrew] Cleaning up${RESET}\n"
 brew cleanup
 printf "Done.\n\n"

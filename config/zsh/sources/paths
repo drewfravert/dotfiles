@@ -1,5 +1,13 @@
 #!/usr/bin/env zsh
 
 # ========================================================================================
-# Aliases
+# Paths
 # ========================================================================================
+
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
+
+path_prepend ~/.local/bin
+
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh-completions:${FPATH}
+fi

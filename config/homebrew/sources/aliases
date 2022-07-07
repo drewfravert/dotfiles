@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
 # ========================================================================================
 # Aliases
@@ -6,9 +6,9 @@
 
 alias bt="brew tap"
 alias bi="brew install"
-alias bci="brew cask install"
+alias bic="brew install --cask"
 alias blv="brew list --versions"
-alias bclv="brew cask list --versions"
+alias blcv="brew list --cask --versions"
 
 # ========================================================================================
 # Helpers

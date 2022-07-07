@@ -43,3 +43,8 @@
 
 [pull]
   rebase = false
+
+[user]
+	name = drewfravert
+	email = drew@fravert.org
+  signingkey = BCB649CBBC2FCE69

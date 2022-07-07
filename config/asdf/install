@@ -1,6 +1,4 @@
-#!/usr/bin/env bash
-
-source ${BASH_SOURCE%/*}/../bash/sources/colors
+#!/usr/bin/env zsh
 
 # ========================================================================================
 # Variables
@@ -11,23 +9,22 @@ languages=(
   "elixir"
   "python"
   "ruby"
-  "rust"
 )
 
 # ========================================================================================
 # Helpers
 # ========================================================================================
 
-install_languages() {
-  for language in ${languages[@]}; do
-    printf "${BOLD}${PURPLE}==> [asdf]${NORMAL} ${BOLD}Installing package ${GREEN}${language}${NORMAL}\n"
+function install_languages() {
+  for language in "${languages[@]}"; do
+    printf "${FG_MAGENTA}==> [asdf] Installing package ${FG_BOLD_GREEN}${language}${RESET}\n"
 
     # ensure the language plugin is installed and up to date
     if [[ $(asdf plugin list | grep -i ${language}) ]]; then
       asdf plugin update ${language} &> /dev/null
-      printf "${language^} plugin is up to date.\n"
+      printf "${language} plugin is up to date.\n"
     else
-      printf "${BOLD}${BLUE}==>${NORMAL} ${BOLD}Installing ${language^} plugin${NORMAL}\n"
+      printf "${FG_MAGENTA}==> Installing ${language} plugin${RESET}\n"
       asdf plugin add ${language}
     fi
 
@@ -35,17 +32,17 @@ install_languages() {
 
     # ensure the latest version of the language is installed
     if [[ $(asdf list ${language} 2> /dev/null | grep -i ${latest}) ]]; then
-      printf "${language^} version ${latest} is installed.\n"
+      printf "${language} version ${latest} is installed.\n"
     else
-      printf "${BOLD}${BLUE}==>${NORMAL} ${BOLD}Installing ${language^} version ${latest}${NORMAL}\n"
+      printf "${FG_MAGENTA}==> Installing ${language} version ${latest}${RESET}\n"
       asdf install ${language} latest
     fi
 
     # ensure the latest version of the language is set globally
     if [[ $(asdf current ${language} | grep -i ${latest}) ]]; then
-      printf "${language^} version ${latest} is set globally.\n"
+      printf "${language} version ${latest} is set globally.\n"
     else
-      printf "${BOLD}${BLUE}==>${NORMAL} ${BOLD}Setting global ${language^} version to ${latest}${NORMAL}\n"
+      printf "${FG_MAGENTA}==> Setting global ${language} version to ${latest}${RESET}\n"
       asdf global ${language} ${latest}
     fi
 

@@ -11,28 +11,24 @@
     - [git submodule update --init --recursive, "Installing submodules..."]
 - clean: ["~"]
 - create:
-    - ~/dev
-    - ~/notes
-    - ~/screenshots
-    - ~/sync
-    - ~/torrents
+    - ~/Development
+    - ~/Notes
+    - ~/Screenshots
+    - ~/Sync
 - link:
-    ~/.bash_profile: config/bash/bash_profile
-    ~/.bashrc: config/bash/bashrc
+    ~/.zshenv: config/zsh/zshenv
+    ~/.zshrc: config/zsh/zshrc
+    ~/.zprofile: config/zsh/zprofile
     ~/.dotfiles: config
     ~/.gitattributes: config/git/gitattributes
     ~/.gitconfig: config/git/gitconfig
     ~/.gitignore: config/git/gitignore
     ~/.local/bin: config/local/bin
-    ~/.vimrc: config/vim/vimrc
 - shell:
-    - [source ~/.bash_profile, "Reloading shell..."]
+    - [source ~/.zshrc, "Reloading shell..."]
     - [./config/homebrew/install, "Installing Homebrew, taps, formulae and casks..."]
-    - [./config/macos/install, "Configuring macOS..."]
     - [./config/asdf/install, "Installing asdf languages..."]
-    - [./config/yarn/install, "Installing Yarn packages..."]
     - [./config/openssh/install, "Configuring SSH keys..."]
     - [./config/gnupg/install, "Configuring GPG keys..."]
     - [./config/local/install, "Configuring local environment..."]
     - [./config/git/install, "Configuring Git user information..."]
-    - [./config/vscode/install, "Configuring Visual Studio Code..."]

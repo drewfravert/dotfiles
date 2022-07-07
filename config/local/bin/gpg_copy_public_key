@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
 # pipe GPG public key to clipboard
 gpg --export --armor ${GIT_SIGNING_KEY} | pbcopy | echo "GPG public key copied to clipboard."

@@ -1,0 +1,67 @@
+#!/usr/bin/env zsh
+
+# ========================================================================================
+# Exports
+# ========================================================================================
+
+# color variables
+export FG_BLACK="${fg[black]}"
+export FG_RED="${fg[red]}"
+export FG_GREEN="${fg[green]}"
+export FG_YELLOW="${fg[yellow]}"
+export FG_BLUE="${fg[blue]}"
+export FG_MAGENTA="${fg[magenta]}"
+export FG_CYAN="${fg[cyan]}"
+export FG_WHITE="${fg[white]}"
+export FG_DEFAULT="${fg[default]}"
+
+export FG_BOLD_BLACK="${fg_bold[black]}"
+export FG_BOLD_RED="${fg_bold[red]}"
+export FG_BOLD_GREEN="${fg_bold[green]}"
+export FG_BOLD_YELLOW="${fg_bold[yellow]}"
+export FG_MAGENTA="${fg_bold[blue]}"
+export FG_MAGENTA="${fg_bold[magenta]}"
+export FG_BOLD_CYAN="${fg_bold[cyan]}"
+export FG_BOLD_WHITE="${fg_bold[white]}"
+export FG_BOLD_DEFAULT="${fg_bold[default]}"
+
+export BG_BLACK="${bg[black]}"
+export BG_RED="${bg[red]}"
+export BG_GREEN="${bg[green]}"
+export BG_YELLOW="${bg[yellow]}"
+export BG_BLUE="${bg[blue]}"
+export BG_MAGENTA="${bg[magenta]}"
+export BG_CYAN="${bg[cyan]}"
+export BG_WHITE="${bg[white]}"
+export BG_DEFAULT="${bg[default]}"
+
+export BG_BOLD_BLACK="${bg_bold[black]}"
+export BG_BOLD_RED="${bg_bold[red]}"
+export BG_BOLD_GREEN="${bg_bold[green]}"
+export BG_BOLD_YELLOW="${bg_bold[yellow]}"
+export BG_BOLD_BLUE="${bg_bold[blue]}"
+export BG_BOLD_MAGENTA="${bg_bold[magenta]}"
+export BG_BOLD_CYAN="${bg_bold[cyan]}"
+export BG_BOLD_WHITE="${bg_bold[white]}"
+export BG_BOLD_DEFAULT="${bg_bold[default]}"
+
+export RESET="${reset_color}"
+
+# info variables
+export TIME_MINUTES="%T"       # System time (HH:MM)
+export TIME_SECONDS="%*"       # System time (HH:MM:SS)
+export DATE="%D"               # System date (YY-MM-DD)
+export USERNAME="%n"           # Current username
+export ABSOLUTE_DIRECTORY="%d" # The current working directory
+export RELATIVE_DIRECTORY="%~" # The current working directory, relative to the home directory
+export HOSTNAME_FULL="%M"      # The computer's hostname
+export HOSTNAME_SHORT="%m"     # The computer's hostname (truncated before the first period)
+
+# enable colored output
+export CLICOLOR=1
+
+# export terminal name for gpg
+export GPG_TTY=$(tty)
+
+# export homebrew github api token
+export HOMEBREW_GITHUB_API_TOKEN=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

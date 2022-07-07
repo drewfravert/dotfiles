@@ -1,12 +1,10 @@
-#!/usr/bin/env bash
-
-source ${BASH_SOURCE%/*}/../bash/sources/colors
+#!/usr/bin/env zsh
 
 # ========================================================================================
 # Git
 # ========================================================================================
 
-printf "${BOLD}${PURPLE}==> [Git]${NORMAL} ${BOLD}Creating ${GREEN}~/.gitconfig.local${NORMAL}\n"
+printf "${FG_MAGENTA}==> [Git] Creating ${FG_BOLD_GREEN}~/.gitconfig.local${RESET}\n"
 rm ~/.gitconfig.local
 touch ~/.gitconfig.local
 cat >> ~/.gitconfig.local <<EOF

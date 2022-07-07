@@ -1,0 +1,12 @@
+#!/usr/bin/env zsh
+
+source ~/.dotfiles/zsh/sources/eval
+source ~/.dotfiles/zsh/sources/exports
+source ~/.dotfiles/zsh/sources/functions
+source ~/.dotfiles/zsh/sources/paths
+source ~/.dotfiles/zsh/sources/prompt
+source ~/.dotfiles/zsh/sources/options
+source ~/.dotfiles/zsh/sources/plugins
+source ~/.dotfiles/zsh/sources/aliases
+source ~/.dotfiles/zsh/sources/hotkeys
+source ~/.dotfiles/zsh/sources/dotfiles

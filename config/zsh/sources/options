@@ -1,0 +1,26 @@
+#!/usr/bin/env zsh
+
+# ========================================================================================
+# Options
+# ========================================================================================
+
+setopt autocd
+setopt appendhistory
+setopt cdablevars
+setopt correctall
+setopt extendedglob
+setopt hist_ignore_all_dups
+setopt menucomplete
+setopt promptsubst
+
+# enable tab completions
+autoload -Uz compinit
+compinit
+
+# enable color constants
+autoload -Uz colors
+colors
+
+# enable advanced prompt support
+autoload -Uz promptinit
+promptinit

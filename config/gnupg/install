@@ -1,25 +1,12 @@
-#!/usr/bin/env bash
-
-source ${BASH_SOURCE%/*}/../bash/sources/colors
+#!/usr/bin/env zsh
 
 # ========================================================================================
 # GPG Keys
 # ========================================================================================
 
-printf "${BOLD}${PURPLE}==> [GNU Privacy Guard]${NORMAL} ${BOLD}Generating GPG keys${NORMAL}\n"
+printf "${FG_MAGENTA}==> [GNU Privacy Guard] Generating GPG keys${RESET}\n"
 
 # generate GPG key
 gpg_generate_key
-
-# add pinentry-mac as the default GPG pinentry program
-entry="pinentry-program /usr/local/bin/pinentry-mac"
-file=~/.gnupg/gpg-agent.conf
-
-if [[ ! $(grep ${entry} ${file}) ]]; then
-  echo ${entry} > ${file}
-fi
-
-unset entry
-unset file
 
 printf "Done.\n\n"

@@ -1,12 +1,10 @@
-#!/usr/bin/env bash
-
-source ${BASH_SOURCE%/*}/../bash/sources/colors
+#!/usr/bin/env zsh
 
 # ========================================================================================
 # SSH Keys
 # ========================================================================================
 
-printf "${BOLD}${PURPLE}==> [OpenSSH]${NORMAL} ${BOLD}Generating SSH keys${NORMAL}\n"
+printf "${FG_MAGENTA}==> [OpenSSH] Generating SSH keys${RESET}\n"
 
 ssh_generate_key
 

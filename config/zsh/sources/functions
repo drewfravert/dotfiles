@@ -1,0 +1,33 @@
+#!/usr/bin/env zsh
+
+# ========================================================================================
+# Functions
+# ========================================================================================
+
+function git_status() {
+  if git branch &> /dev/null; then
+    if git status | grep "nothing to commit" &> /dev/null; then
+      echo -en " ${FG_GREEN}[$(git_branch)]${RESET}"
+    else
+      echo -en " ${FG_RED}[$(git_branch)]${RESET}"
+    fi
+  fi
+}
+
+function git_branch() {
+  git symbolic-ref --short HEAD 2> /dev/null
+}
+
+function path_append() {
+  path_remove "$1"
+  PATH="${PATH:+"$PATH:"}$1"
+}
+
+function path_prepend() {
+  path_remove "$1"
+  PATH="$1${PATH:+":$PATH"}"
+}
+
+function path_remove() {
+  PATH=$(echo -n "${PATH}" | awk -v RS=: -v ORS=: "\$0 != \"$1\"" | sed 's/:$//')
+}
