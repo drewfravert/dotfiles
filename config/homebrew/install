@@ -7,7 +7,6 @@
 formulae=(
   "asdf"
   "coreutils"
-  "docker"
   "exa"
   "findutils"
   "fzf"
@@ -29,22 +28,28 @@ formulae=(
 
 applications=(
   "1password"
-  "brave-browser-dev"
+  "adguard"
+  "brave-browser"
   "cleanmymac"
   "figma"
-  "firefox-developer-edition"
+  "firefox"
+  "fliqlo"
   "github"
   "iina"
   "imageoptim"
   "iterm2"
   "ledger-live"
   "little-snitch"
+  "notion"
   "pocket-casts"
   "postgres-unofficial"
   "postico"
-  "safari-technology-preview"
   "slack"
+  "tidal"
+  "tor-browser"
+  "transmission"
   "visual-studio-code"
+  "zoom"
 )
 
 drivers=(

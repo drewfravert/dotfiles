@@ -62,6 +62,3 @@ export CLICOLOR=1
 
 # export terminal name for gpg
 export GPG_TTY=$(tty)
-
-# export homebrew github api token
-export HOMEBREW_GITHUB_API_TOKEN=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

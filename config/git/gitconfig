@@ -46,3 +46,8 @@
 
 [pull]
 	rebase = false
+[init]
+	defaultBranch = main
+[user]
+	name = Drew Fravert
+	email = drew@fravert.org
