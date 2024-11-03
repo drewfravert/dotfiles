@@ -10,3 +10,17 @@ source ~/.dotfiles/zsh/sources/plugins
 source ~/.dotfiles/zsh/sources/aliases
 source ~/.dotfiles/zsh/sources/hotkeys
 source ~/.dotfiles/zsh/sources/dotfiles
+
+# pnpm
+export PNPM_HOME="/Users/drew/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+# bun completions
+[ -s "/Users/drew/.bun/_bun" ] && source "/Users/drew/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

@@ -18,3 +18,4 @@ alias blcv="brew list --cask --versions"
 # upgrade outdated formulae
 # remove stale/outdated/old formulae
 alias brewupdate="brew update; brew upgrade; brew cleanup"
+alias brewupgrade="brew update; brew upgrade --greedy; brew cleanup"

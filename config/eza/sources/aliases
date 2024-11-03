@@ -4,5 +4,5 @@
 # Aliases
 # ========================================================================================
 
-# set exa as the default `ls` command
-alias ls="exa --all --classify --extended --git --group --header --long"
+# set eza as the default `ls` command
+alias ls="eza --all --classify --extended --git --group --header --long"

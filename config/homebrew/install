@@ -7,7 +7,7 @@
 formulae=(
   "asdf"
   "coreutils"
-  "exa"
+  "eza"
   "findutils"
   "fzf"
   "gh"
@@ -17,7 +17,6 @@ formulae=(
   "imagemagick"
   "node"
   "openssh"
-  "pinentry-mac"
   "ripgrep"
   "wget"
   "yarn"
@@ -29,36 +28,47 @@ formulae=(
 applications=(
   "1password"
   "adguard"
+  "arc"
   "brave-browser"
   "cleanmymac"
+  "cleanshot"
+  "copilot"
+  "electrum"
   "figma"
   "firefox"
   "fliqlo"
   "github"
   "iina"
   "imageoptim"
-  "iterm2"
   "ledger-live"
+  "linear-linear"
   "little-snitch"
+  "livebook"
+  "logi-options+"
+  "loom"
+  "mamp"
   "notion"
   "pocket-casts"
   "postgres-unofficial"
   "postico"
+  "postman"
+  "raycast"
+  "safari-technology-preview"
   "slack"
   "tidal"
-  "tor-browser"
   "transmission"
   "visual-studio-code"
+  "warp"
+  "zed"
   "zoom"
 )
 
-drivers=(
-  "wacom-tablet"
-)
+drivers=()
 
 fonts=(
   "font-inter"
   "font-jetbrains-mono"
+  "font-monaspace"
 )
 
 # ========================================================================================

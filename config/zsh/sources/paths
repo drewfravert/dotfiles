@@ -7,6 +7,7 @@
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
 
 path_prepend ~/.local/bin
+path_prepend ./node_modules/.bin
 
 if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh-completions:${FPATH}
